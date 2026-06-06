@@ -17,6 +17,7 @@
   <button class="tb" onclick="document.getElementById('LOGO').click()">🖼 Logo</button>
   <button class="tb" onclick="xpdf('p')">⬇ PDF Vertical</button>
   <button class="tb" onclick="xpdf('l')">⬇ PDF Horizontal</button>
+  <button class="tb" onclick="uedToggle()">Personalizar</button>
 </div>
 
 <div class="deck" id="deck">
@@ -2094,14 +2095,10 @@
 </div>
 
 <!-- ════════════ PANEL EDITOR DE USUARIO ════════════ -->
-<button class="ued-trigger" id="uedTrigger" onclick="uedToggle()" title="Personalizar presentación">
-  <svg viewBox="0 0 24 24"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
-  Personalizar
-</button>
 
 <div class="ued-panel" id="uedPanel">
   <div class="ued-header">
-    <span class="ued-title">✏️ Personalizar</span>
+    <span class="ued-title">Personalizar</span>
     <button class="ued-close" onclick="uedToggle()">✕</button>
   </div>
   <div class="ued-body">
