@@ -1,0 +1,2099 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GRUPO ITISA — Presentación Ejecutiva</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,700;1,900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/estilos.css">
+</head>
+<body>
+
+<input type="file" id="LOGO" accept="image/*" style="display:none" onchange="upLogo(this)">
+
+<div class="tools" id="toolsbar" style="display:none">
+  <button class="tb" onclick="document.getElementById('LOGO').click()">🖼 Logo</button>
+  <button class="tb" onclick="xpdf('p')">⬇ PDF Vertical</button>
+  <button class="tb" onclick="xpdf('l')">⬇ PDF Horizontal</button>
+</div>
+
+<div class="deck" id="deck">
+
+<!-- ════════════════════════════════════════════
+     SLIDE 0 — PORTADA EDITORIAL
+     Panel tipográfico izquierdo + foto diagonal derecha
+════════════════════════════════════════════ -->
+<div class="slide s0 on" id="p_cov" data-title="Portada">
+  <!-- Blueprint + líneas industriales -->
+  <div class="c0-bp">
+    <svg width="100%" height="100%" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice"
+         xmlns="http://www.w3.org/2000/svg" style="position:absolute;inset:0">
+      <defs>
+        <pattern id="c-gsm" width="20" height="20" patternUnits="userSpaceOnUse">
+          <path d="M20 0L0 0 0 20" fill="none" stroke="rgba(28,80,175,.052)" stroke-width=".5"/>
+        </pattern>
+        <pattern id="c-glg" width="80" height="80" patternUnits="userSpaceOnUse">
+          <rect width="80" height="80" fill="url(#c-gsm)"/>
+          <path d="M80 0L0 0 0 80" fill="none" stroke="rgba(28,80,175,.095)" stroke-width="1"/>
+        </pattern>
+      </defs>
+      <rect width="100%" height="100%" fill="#050c1c"/>
+      <rect width="100%" height="100%" fill="url(#c-glg)"/>
+
+      <!-- Sección transversal de tubería — panel inferior izquierdo -->
+      <circle cx="165" cy="730" r="130" fill="none" stroke="rgba(28,80,175,.13)" stroke-width="1.5"/>
+      <circle cx="165" cy="730" r="92"  fill="none" stroke="rgba(28,80,175,.08)" stroke-width="1"/>
+      <circle cx="165" cy="730" r="42"  fill="none" stroke="rgba(28,80,175,.10)" stroke-width="1.2"/>
+      <circle cx="165" cy="730" r="12"  fill="rgba(28,80,175,.08)"/>
+      <line x1="165" y1="560" x2="165" y2="900" stroke="rgba(28,80,175,.055)" stroke-width=".8" stroke-dasharray="5,5"/>
+      <line x1="0"   y1="730" x2="340" y2="730" stroke="rgba(28,80,175,.055)" stroke-width=".8" stroke-dasharray="5,5"/>
+
+      <!-- Layout de planta (superior izquierdo, detrás del texto) -->
+      <rect x="50"  y="110" width="320" height="190" fill="none" stroke="rgba(28,80,175,.075)" stroke-width="1"/>
+      <rect x="72"  y="130" width="276" height="150" fill="none" stroke="rgba(28,80,175,.04)"  stroke-width=".7"/>
+      <line x1="200" y1="130" x2="200" y2="280"     stroke="rgba(28,80,175,.045)" stroke-width=".7"/>
+      <line x1="72"  y1="210" x2="348" y2="210"     stroke="rgba(28,80,175,.045)" stroke-width=".7"/>
+
+      <!-- Cotas / indicadores de dimensión -->
+      <line x1="40"  y1="110" x2="40"  y2="300"    stroke="rgba(28,80,175,.065)" stroke-width=".7" stroke-dasharray="3,3"/>
+      <line x1="50"  y1="318" x2="380" y2="318"    stroke="rgba(28,80,175,.065)" stroke-width=".7" stroke-dasharray="3,3"/>
+
+      <!-- Curvas de flujo — costura helicoidal (zona central) -->
+      <path d="M360 480 Q490 452 620 490 T880 472" fill="none" stroke="rgba(28,80,175,.095)" stroke-width="1.3"/>
+      <path d="M360 507 Q490 480 620 517 T880 500" fill="none" stroke="rgba(28,80,175,.06)"  stroke-width=".8"/>
+      <path d="M360 534 Q490 508 620 544 T880 528" fill="none" stroke="rgba(28,80,175,.04)"  stroke-width=".6"/>
+
+      <!-- Elemento estructural — zona de foto (superior derecho) -->
+      <circle cx="1240" cy="240" r="105" fill="none" stroke="rgba(28,80,175,.09)"  stroke-width="1.2"/>
+      <circle cx="1240" cy="240" r="70"  fill="none" stroke="rgba(28,80,175,.055)" stroke-width=".8"/>
+      <circle cx="1240" cy="240" r="28"  fill="none" stroke="rgba(28,80,175,.075)" stroke-width="1"/>
+      <line x1="1240" y1="105" x2="1240" y2="375" stroke="rgba(28,80,175,.055)" stroke-width=".8" stroke-dasharray="5,5"/>
+      <line x1="1100" y1="240" x2="1380" y2="240" stroke="rgba(28,80,175,.055)" stroke-width=".8" stroke-dasharray="5,5"/>
+
+      <!-- Líneas horizontales sutiles de contexto -->
+      <line x1="0" y1="76"  x2="1440" y2="76"  stroke="rgba(28,80,175,.055)" stroke-width=".8"/>
+      <line x1="0" y1="824" x2="1440" y2="824" stroke="rgba(28,80,175,.055)" stroke-width=".8"/>
+    </svg>
+  </div>
+
+  <!-- Barra de logo — solo logo ITISA en la portada principal -->
+  <div class="c0-logo-sec">
+    <div class="c0-logo-itisa" onclick="document.getElementById('LOGO').click()" title="Clic para cargar logo ITISA" style="border-right:none;padding-right:0">
+      <img class="li" id="LI5" alt="ITISA GRUPO">
+      <div class="lt" id="LT5"><span class="l-n">ITISA</span><span class="l-s">GRUPO</span></div>
+    </div>
+    <input type="file" id="LOGO_TX" accept="image/*" style="display:none" onchange="upLogoTumex(this)">
+  </div>
+
+  <!-- Split: texto izquierda | foto diagonal derecha -->
+  <div class="c0-split">
+
+    <!-- IZQUIERDA: panel de texto editorial -->
+    <div class="c0-text">
+
+      <!-- Bloque principal: acento + título + descripción + especialidades -->
+      <div class="c0-main">
+        <div class="c0-accent"></div>
+        <h1 class="c0-title">GRUPO ITISA</h1>
+        <p class="c0-desc" style="font-size:13px;letter-spacing:4px;text-transform:uppercase;font-weight:600;color:rgba(255,255,255,.45)">Presentación Ejecutiva</p>
+      </div>
+
+      <!-- Toggle + campos cliente portada (ocultos por defecto, visibles con ⚙) -->
+      <button class="c0-client-btn" id="c0ClientBtn" onclick="toggleC0Client()" style="display:none">
+        <span class="s1-toggle-icon">+</span>Agregar datos del cliente
+      </button>
+      <div class="c0-client" id="c0Client">
+        <div class="c0-cf">
+          <span class="c0-ck">Preparado para</span>
+          <span class="c0-cv" contenteditable="true" spellcheck="false">Nombre del cliente</span>
+        </div>
+        <div class="c0-cf">
+          <span class="c0-ck">Fecha</span>
+          <span class="c0-cv" contenteditable="true" spellcheck="false">2025</span>
+        </div>
+        <button class="c0-client-close" onclick="toggleC0Client()" title="Quitar">×</button>
+      </div>
+
+      <!-- Fila inferior con íconos — como el contact row del hero de referencia -->
+      <div class="c0-footer">
+        <span class="c0-fi">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+          <a href="https://www.itisa.com.mx/" target="_blank" rel="noopener" style="color:inherit;text-decoration:none">www.itisa.com.mx</a>
+        </span>
+        <span class="c0-fi">
+          <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          México
+        </span>
+      </div>
+
+    </div>
+
+    <!-- DERECHA: foto con corte diagonal en el borde izquierdo -->
+    <div class="isl c0-ph">
+      <label class="ph" id="cov-bg">
+        <div class="ph-i"><svg viewBox="0 0 24 24"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg></div>
+        <span class="ph-t">Hero industrial GRUPO ITISA</span>
+        <span class="ph-h">Instalaciones · infraestructura · industria</span>
+        <button class="ph-b" tabindex="-1">+ Cargar foto</button>
+        <input type="file" accept="image/*" onchange="upBg(this,'cov-bg','')">
+      </label>
+    </div>
+
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════════
+     SLIDE — ÍNDICE (generado dinámicamente por JS)
+════════════════════════════════════════════ -->
+<div class="slide sidx" id="p_idx" data-title="Contenido">
+  <header class="nav nav-lt">
+    <div class="nav-w"><div class="lz" onclick="document.getElementById('LOGO').click()"><img class="li" id="LI_idx" alt="GRUPO ITISA"><div class="lt"><span class="l-n">ITISA</span><span class="l-s">GRUPO</span></div></div></div>
+    <div class="nav-d"><div class="nav-d-col"><span class="t-n">GRUPO ITISA</span><span class="t-s">Presentación Ejecutiva</span></div></div>
+  </header>
+  <!-- Contenido inyectado por JS (estructura sq) -->
+  <div id="idx-body"></div>
+</div>
+
+<!-- ════════════════════════════════════════════
+     SLIDE — CONTENIDO v2 (3 columnas oscuro)
+     Opción alternativa para comparar con la v1 (sq claro)
+════════════════════════════════════════════ -->
+<div class="slide sidx2" id="p_idx2" data-title="Contenido (v2)">
+  <header class="nav"><div class="nav-w"><div class="lz" onclick="document.getElementById('LOGO').click()"><img class="li" id="LI_idx2" alt="GRUPO ITISA"><div class="lt"><span class="l-n">ITISA</span><span class="l-s">GRUPO</span></div></div></div><div class="nav-d"><div class="nav-d-col"><span class="t-n">GRUPO ITISA</span><span class="t-s">Presentación Ejecutiva</span></div></div></header>
+  <div id="idx2-body"></div>
+</div>
+
+<!-- ════════════════════════════════════════════
+     SLIDE 1 — QUIÉNES SOMOS
+     Foto a sangre · contexto del grupo · 4 divisiones
+════════════════════════════════════════════ -->
+<div class="slide s1" id="p0" data-title="¿Quiénes Somos?">
+  <div class="isl bg-sl">
+    <label class="ph" id="bg1">
+      <div class="ph-i"><svg viewBox="0 0 24 24"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg></div>
+      <span class="ph-t">Imagen de fondo · GRUPO ITISA</span>
+      <span class="ph-h">Infraestructura industrial GRUPO ITISA</span>
+      <button class="ph-b" tabindex="-1">+ Cargar foto</button>
+      <input type="file" accept="image/*" onchange="upBg(this,'bg1','ov1')">
+    </label>
+  </div>
+  <div class="s1-ov" id="ov1"></div>
+
+  <header class="nav">
+    <div class="nav-w">
+      <div class="lz" onclick="document.getElementById('LOGO').click()" title="Clic para cargar logo">
+        <img class="li" id="LI1" alt="ITISA GRUPO">
+        <div class="lt" id="LT1"><span class="l-n">ITISA</span><span class="l-s">GRUPO</span></div>
+        <span class="lhint">↑ clic cargar logo</span>
+      </div>
+    </div>
+    <div class="nav-d"><div class="nav-d-col"><span class="t-n">GRUPO ITISA</span><span class="t-s">Quiénes Somos</span></div></div>
+  </header>
+
+  <div class="s1-hero" style="justify-content:center;gap:28px">
+    <div class="s1-top" style="gap:18px">
+      <p class="s1-tag">QUIÉNES SOMOS</p>
+      <h1 class="s1-title" style="font-size:clamp(28px,3.4vw,46px)">Grupo corporativo<br>100% Mexicano</h1>
+      <div class="s1-rule"></div>
+      <p class="s1-eye" style="max-width:640px;line-height:1.72;font-size:13.5px">Liderazgo significativo en los sectores de infraestructura y construcción: prefabricados de concreto, construcción y rehabilitación de infraestructura ferroviaria, manufactura de durmientes de concreto para ferrocarril, comercialización de suministros ferroviarios y fabricación de tubería de acero en diámetros mayores.</p>
+      <div style="display:flex;flex-direction:column;gap:9px;margin-top:4px">
+        <div style="display:flex;align-items:center;gap:10px">
+          <span style="width:4px;height:4px;border-radius:50%;background:var(--blue-lt);flex-shrink:0"></span>
+          <span style="font-size:12.5px;color:rgba(255,255,255,.60);line-height:1.5">Una de las <strong style="color:rgba(255,255,255,.85);font-weight:700">20 empresas corporativas más grandes</strong> en el sector de infraestructura y materiales en México.</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:10px">
+          <span style="width:4px;height:4px;border-radius:50%;background:var(--blue-lt);flex-shrink:0"></span>
+          <span style="font-size:12.5px;color:rgba(255,255,255,.60);line-height:1.5"><strong style="color:rgba(255,255,255,.85);font-weight:700">75 años</strong> de trayectoria, reputación de marca, solidez y cumplimiento.</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:10px">
+          <span style="width:4px;height:4px;border-radius:50%;background:var(--blue-lt);flex-shrink:0"></span>
+          <span style="font-size:12.5px;color:rgba(255,255,255,.60);line-height:1.5">Participación intensiva con <strong style="color:rgba(255,255,255,.85);font-weight:700">récord de cumplimiento</strong> en los proyectos de infraestructura más relevantes de México.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 4 divisiones del grupo -->
+  <div class="s1-strip" style="grid-template-columns:1fr 1fr 1fr 1fr">
+    <div class="cin">
+      <span class="cin-line"></span>
+      <span class="cin-n" style="font-size:clamp(16px,1.8vw,22px);letter-spacing:.5px">PREFABRICADOS</span>
+      <span class="cin-l">ITISA Prefabricados</span>
+      <span class="cin-s">100,000 m³/año · 5 plantas</span>
+    </div>
+    <div class="cin">
+      <span class="cin-line"></span>
+      <span class="cin-n" style="font-size:clamp(16px,1.8vw,22px);letter-spacing:.5px">DURMIENTES</span>
+      <span class="cin-l">ITISA Durmientes</span>
+      <span class="cin-s">>27M instalados · #1 LATAM</span>
+    </div>
+    <div class="cin">
+      <span class="cin-line"></span>
+      <span class="cin-n" style="font-size:clamp(16px,1.8vw,22px);letter-spacing:.5px">VÍAS FÉRREAS</span>
+      <span class="cin-l">ITISA Vías Férreas</span>
+      <span class="cin-s">1,011 km · 420+ pasos a nivel</span>
+    </div>
+    <div class="cin">
+      <span class="cin-line"></span>
+      <span class="cin-n" style="font-size:clamp(16px,1.8vw,22px);letter-spacing:.5px">TUMEX</span>
+      <span class="cin-l">Tubería de Acero</span>
+      <span class="cin-s">6"–138" · 970K+ t procesadas</span>
+    </div>
+  </div>
+</div>
+
+<!-- ════════════ SLIDE — EL GRUPO (movido aquí, después de ¿Quiénes Somos?) ════════════ -->
+<div class="slide s2" id="p7" data-title="El Grupo">
+  <div class="s2-bp">
+    <svg width="100%" height="100%" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" style="position:absolute;inset:0">
+      <defs><pattern id="gsm2" width="20" height="20" patternUnits="userSpaceOnUse"><path d="M20 0L0 0 0 20" fill="none" stroke="rgba(28,80,175,.052)" stroke-width=".5"/></pattern><pattern id="glg2" width="80" height="80" patternUnits="userSpaceOnUse"><rect width="80" height="80" fill="url(#gsm2)"/><path d="M80 0L0 0 0 80" fill="none" stroke="rgba(28,80,175,.095)" stroke-width="1"/></pattern></defs>
+      <rect width="100%" height="100%" fill="#050c1c"/><rect width="100%" height="100%" fill="url(#glg2)"/>
+    </svg>
+  </div>
+  <header class="nav">
+    <div class="nav-w"><div class="lz" onclick="document.getElementById('LOGO').click()"><img class="li" id="LI_g" alt="GRUPO ITISA"><div class="lt"><span class="l-n">ITISA</span><span class="l-s">GRUPO</span></div></div></div>
+    <div class="nav-d"><div class="nav-d-col"><span class="t-n">GRUPO ITISA</span><span class="t-s">El Grupo</span></div></div>
+  </header>
+  <div class="s2-top">
+    <div class="s2-tl"><p class="s-eye">Estructura Corporativa</p><h2 class="s2-title">El Grupo</h2><span class="s-rule"></span><p class="s2-sub">Seis empresas especializadas · 75 años de trayectoria · 100% mexicano</p></div>
+    <div class="s2-tr"><div class="s2-ghost">6</div><div class="s2-ghost-lbl">Empresas del Grupo</div></div>
+  </div>
+  <div class="s2-grid">
+    <div class="cin"><span class="cin-line"></span><span class="cin-n">Prefabricados</span><span class="cin-l">ITISA Prefabricados</span><span class="cin-s">100,000 m³/año · 5 plantas</span></div>
+    <div class="cin"><span class="cin-line"></span><span class="cin-n">Durmientes</span><span class="cin-l">ITISA Durmientes</span><span class="cin-s">>27M fabricados · 1.2M/año</span></div>
+    <div class="cin"><span class="cin-line"></span><span class="cin-n">Vías Férreas</span><span class="cin-l">ITISA Vías Férreas</span><span class="cin-s">1,011 km · 19 puentes</span></div>
+    <div class="cin"><span class="cin-line"></span><span class="cin-n">TUMEX</span><span class="cin-l">Tubería de Acero</span><span class="cin-s">6"–138" · 68,121 m² planta</span></div>
+    <div class="cin"><span class="cin-line"></span><span class="cin-n">AMEXDER</span><span class="cin-l">Representación Ferroviaria</span><span class="cin-s">Desde 1948 · Mercado nacional</span></div>
+    <div class="cin"><span class="cin-line"></span><span class="cin-n">IIT</span><span class="cin-l">Ingeniería e Innovación</span><span class="cin-s">Diseño · I+D · Proyectos especiales</span></div>
+  </div>
+</div>
+
+<!-- ════════════ SLIDE 8 — VISIÓN INDUSTRIAL (movido aquí, después de El Grupo) ════════════ -->
+<div class="slide sq" id="p8" data-title="Visión Industrial">
+  <header class="nav nav-lt">
+    <div class="nav-w"><div class="lz" onclick="document.getElementById('LOGO').click()"><img class="li" id="LI_qs" alt="GRUPO ITISA"><div class="lt"><span class="l-n">ITISA</span><span class="l-s">GRUPO</span></div></div></div>
+    <div class="nav-d"><div class="nav-d-col"><span class="t-n">GRUPO ITISA</span><span class="t-s">Quiénes Somos</span></div></div>
+  </header>
+  <div class="sq-body">
+    <div class="sq-left">
+      <div class="sq-content">
+        <span class="sq-kick">QUIÉNES SOMOS</span>
+        <h2 class="sq-h2">Un grupo industrial<br>de largo plazo</h2>
+        <span class="s-rule corp" style="margin-bottom:16px"></span>
+        <p class="sq-desc">Grupo empresarial 100% mexicano fundado en 1948, especializado en infraestructura de concreto prefabricado, vías férreas y tubería de acero. Con más de 75 años de trayectoria, ITISA es el proveedor líder en México para proyectos de movilidad, infraestructura hidráulica e industrial.</p>
+        <div class="sq-section">
+          <div class="sq-section-title">MISIÓN</div>
+          <div class="sq-section-text">Proveer soluciones de ingeniería de alta calidad en infraestructura de concreto, ferroviaria y tubería de acero, generando valor sostenible para nuestros clientes, colaboradores y la sociedad mexicana.</div>
+        </div>
+        <div class="sq-section">
+          <div class="sq-section-title">VISIÓN</div>
+          <div class="sq-section-text">Ser el grupo industrial de infraestructura más innovador y confiable de México, con reconocimiento internacional por la calidad técnica y el compromiso con el desarrollo sustentable del país.</div>
+        </div>
+      </div>
+      <div class="sq-meta">
+        <div class="s4-mi"><span class="mk">Fundación</span><span class="mv">1948</span></div>
+        <div class="s4-mi"><span class="mk">Origen</span><span class="mv">100% Mexicano</span></div>
+        <div class="s4-mi"><span class="mk">Empresas</span><span class="mv">6 Unidades</span></div>
+      </div>
+    </div>
+    <div class="sq-right">
+      <div class="isl bg-sl"><label class="ph ph-lt" id="bg_qs"><div class="ph-i"><svg viewBox="0 0 24 24"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg></div><span class="ph-t">Foto corporativa</span><span class="ph-h">GRUPO ITISA · Instalaciones</span><button class="ph-b" tabindex="-1">+ Cargar foto</button><input type="file" accept="image/*" onchange="upBg(this,'bg_qs','')"></label></div>
+    </div>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════════
+     SLIDE 2 — EN NÚMEROS
+     Fondo #091929 oscuro → cintillas #142B55 claras → fold visible
+════════════════════════════════════════════ -->
+<div class="slide s2" id="p1" data-title="Récords y Cifras">
+  <div class="s2-bp">
+    <svg width="100%" height="100%" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice"
+         xmlns="http://www.w3.org/2000/svg" style="position:absolute;inset:0">
+      <defs>
+        <pattern id="gsm" width="20" height="20" patternUnits="userSpaceOnUse">
+          <path d="M20 0L0 0 0 20" fill="none" stroke="rgba(28,80,175,.055)" stroke-width=".5"/>
+        </pattern>
+        <pattern id="glg" width="80" height="80" patternUnits="userSpaceOnUse">
+          <rect width="80" height="80" fill="url(#gsm)"/>
+          <path d="M80 0L0 0 0 80" fill="none" stroke="rgba(28,80,175,.10)" stroke-width="1"/>
+        </pattern>
+      </defs>
+      <!-- Fondo sólido navy oscuro dentro del SVG → siempre imprime -->
+      <rect width="100%" height="100%" fill="#050c1c"/>
+      <!-- Cuadrícula blueprint encima del fondo -->
+      <rect width="100%" height="100%" fill="url(#glg)"/>
+      <!-- Planta industrial — rectángulo principal -->
+      <rect x="55"  y="160" width="420" height="300" fill="none" stroke="rgba(28,80,175,.14)" stroke-width="1.5"/>
+      <rect x="75"  y="180" width="380" height="260" fill="none" stroke="rgba(28,80,175,.07)" stroke-width=".8"/>
+      <!-- Divisiones internas planta -->
+      <line x1="195" y1="180" x2="195" y2="440" stroke="rgba(28,80,175,.09)" stroke-width=".8"/>
+      <line x1="315" y1="180" x2="315" y2="440" stroke="rgba(28,80,175,.09)" stroke-width=".8"/>
+      <line x1="75"  y1="300" x2="455" y2="300" stroke="rgba(28,80,175,.09)" stroke-width=".8"/>
+      <!-- Círculos tubería en planta -->
+      <circle cx="138" cy="242" r="34" fill="none" stroke="rgba(28,80,175,.13)" stroke-width="1.3"/>
+      <circle cx="138" cy="242" r="22" fill="none" stroke="rgba(28,80,175,.08)" stroke-width=".8"/>
+      <circle cx="138" cy="242" r="8"  fill="none" stroke="rgba(28,80,175,.1)"  stroke-width="1"/>
+      <circle cx="258" cy="242" r="34" fill="none" stroke="rgba(28,80,175,.13)" stroke-width="1.3"/>
+      <circle cx="258" cy="242" r="22" fill="none" stroke="rgba(28,80,175,.08)" stroke-width=".8"/>
+      <circle cx="258" cy="242" r="8"  fill="none" stroke="rgba(28,80,175,.1)"  stroke-width="1"/>
+      <circle cx="378" cy="242" r="34" fill="none" stroke="rgba(28,80,175,.12)" stroke-width="1.2"/>
+      <circle cx="378" cy="242" r="22" fill="none" stroke="rgba(28,80,175,.07)" stroke-width=".8"/>
+      <!-- Líneas de dimensión -->
+      <line x1="55" y1="140" x2="475" y2="140" stroke="rgba(28,80,175,.07)" stroke-width=".7" stroke-dasharray="3,3"/>
+      <line x1="35" y1="160" x2="35"  y2="460" stroke="rgba(28,80,175,.07)" stroke-width=".7" stroke-dasharray="3,3"/>
+      <!-- Bloque derecho: estructura secundaria -->
+      <rect x="530" y="110" width="300" height="200" fill="none" stroke="rgba(28,80,175,.1)"  stroke-width="1.2"/>
+      <rect x="550" y="130" width="260" height="160" fill="none" stroke="rgba(28,80,175,.06)" stroke-width=".7"/>
+      <line x1="700" y1="130" x2="700" y2="290" stroke="rgba(28,80,175,.08)" stroke-width=".7"/>
+      <!-- Curvas de conducción -->
+      <path d="M680 420 Q790 398 900 435 T1120 418" fill="none" stroke="rgba(28,80,175,.1)"  stroke-width="1.2"/>
+      <path d="M680 448 Q790 428 900 462 T1120 448" fill="none" stroke="rgba(28,80,175,.07)" stroke-width=".8"/>
+      <!-- Círculo grande — sección estructural -->
+      <circle cx="1210" cy="280" r="128" fill="none" stroke="rgba(28,80,175,.1)"  stroke-width="1.3"/>
+      <circle cx="1210" cy="280" r="88"  fill="none" stroke="rgba(28,80,175,.07)" stroke-width=".8"/>
+      <circle cx="1210" cy="280" r="44"  fill="none" stroke="rgba(28,80,175,.09)" stroke-width="1"/>
+      <circle cx="1210" cy="280" r="12"  fill="rgba(28,80,175,.07)"/>
+      <line x1="1210" y1="130" x2="1210" y2="430" stroke="rgba(28,80,175,.07)" stroke-width=".8" stroke-dasharray="5,5"/>
+      <line x1="1060" y1="280" x2="1360" y2="280" stroke="rgba(28,80,175,.07)" stroke-width=".8" stroke-dasharray="5,5"/>
+      <!-- Líneas horizontales sutiles de fondo -->
+      <line x1="0" y1="78"  x2="1440" y2="78"  stroke="rgba(28,80,175,.06)" stroke-width=".8"/>
+      <line x1="0" y1="830" x2="1440" y2="830" stroke="rgba(28,80,175,.06)" stroke-width=".8"/>
+    </svg>
+  </div>
+
+  <header class="nav">
+    <div class="nav-w">
+      <div class="lz" onclick="document.getElementById('LOGO').click()">
+        <img class="li" id="LI2" alt="ITISA GRUPO">
+        <div class="lt" id="LT2"><span class="l-n">ITISA</span><span class="l-s">GRUPO</span></div>
+      </div>
+    </div>
+    <div class="nav-d"><div class="nav-d-col"><span class="t-n">GRUPO ITISA</span><span class="t-s">Récords por Unidad</span></div></div>
+  </header>
+
+  <div class="s2-top">
+    <div class="s2-tl">
+      <p class="s-eye">Récords e Hitos</p>
+      <h2 class="s2-title">Los récords de<br>nuestras unidades</h2>
+      <span class="s-rule"></span>
+      <p class="s2-sub">Cuatro unidades de negocio líderes en sus respectivos sectores, respaldadas por 75 años de trayectoria industrial.</p>
+    </div>
+    <div class="s2-tr">
+      <div class="s2-ghost">4</div>
+      <div class="s2-ghost-lbl">Unidades de negocio especializadas</div>
+    </div>
+  </div>
+
+  <!-- 8 cintillas — 2 por unidad de negocio -->
+  <div class="s2-grid" style="grid-template-columns:repeat(4,1fr);grid-template-rows:1fr 1fr">
+    <!-- PREFABRICADOS -->
+    <div class="cin" style="border-top:2px solid var(--blue-lt)"><span class="cin-line"></span><span class="cin-n">100K<span class="cin-u"> m³</span></span><span class="cin-l">Prefab / Año</span><span class="cin-s">ITISA Prefabricados</span></div>
+    <!-- DURMIENTES -->
+    <div class="cin" style="border-top:2px solid var(--blue-lt)"><span class="cin-line"></span><span class="cin-n">&gt;27M</span><span class="cin-l">Durmientes</span><span class="cin-s">ITISA Durmientes · #1 LATAM</span></div>
+    <!-- VÍAS FÉRREAS -->
+    <div class="cin" style="border-top:2px solid var(--blue-lt)"><span class="cin-line"></span><span class="cin-n">1,011<span class="cin-u"> km</span></span><span class="cin-l">Vías Instaladas</span><span class="cin-s">ITISA Vías Férreas</span></div>
+    <!-- TUMEX -->
+    <div class="cin" style="border-top:2px solid var(--blue-lt)"><span class="cin-line"></span><span class="cin-n">970K+<span class="cin-u"> t</span></span><span class="cin-l">Acero Procesado</span><span class="cin-s">TUMEX · Histórico</span></div>
+    <!-- Fila 2 -->
+    <div class="cin"><span class="cin-line"></span><span class="cin-n">5</span><span class="cin-l">Plantas</span><span class="cin-s">33.5 ha planta principal</span></div>
+    <div class="cin"><span class="cin-line"></span><span class="cin-n">1.2M<span class="cin-u">/año</span></span><span class="cin-l">Producción</span><span class="cin-s">Capacidad instalada</span></div>
+    <div class="cin"><span class="cin-line"></span><span class="cin-n">420+</span><span class="cin-l">Pasos a Nivel</span><span class="cin-s">19 puentes construidos</span></div>
+    <div class="cin"><span class="cin-line"></span><span class="cin-n" style="font-size:clamp(16px,2vw,26px)">API Q1+5L</span><span class="cin-l">Certificaciones</span><span class="cin-s">6" – 138" diámetros</span></div>
+  </div>
+</div>
+
+<!-- p2 Proyectos Icónicos — movido después de Certificaciones -->
+
+<!-- ════════════ SLIDE 5 — HISTORIA (UNA PÁGINA) ════════════ -->
+<div class="slide sh" id="p5" data-title="75 Años de Historia">
+  <div class="sh-bp">
+    <svg width="100%" height="100%" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" style="position:absolute;inset:0">
+      <rect width="100%" height="100%" fill="#050c1c"/>
+      <rect width="100%" height="100%" fill="url(#c-glg)"/>
+    </svg>
+  </div>
+  <header class="nav">
+    <div class="nav-w"><div class="lz" onclick="document.getElementById('LOGO').click()"><img class="li" id="LI_h1" alt="GRUPO ITISA"><div class="lt"><span class="l-n">ITISA</span><span class="l-s">GRUPO</span></div></div></div>
+    <div class="nav-d"><div class="nav-d-col"><span class="t-n">GRUPO ITISA</span><span class="t-s">Historia</span></div></div>
+  </header>
+  <div class="sh-body" style="padding:14px 36px 16px">
+    <div class="sh-header" style="margin-bottom:10px">
+      <p class="s-eye" style="margin-bottom:10px">Trayectoria</p>
+      <div class="sh-title">75 Años de Historia</div>
+      <span class="s-rule" style="margin-top:10px"></span>
+      <div class="sh-sub">Trayectoria industrial · 1948 – 2024</div>
+    </div>
+    <div style="flex:1;display:flex;flex-direction:column;gap:10px">
+
+      <!-- ─── FILA 1: 1948 – 1990 ─── -->
+      <div class="sh-trow">
+        <div class="sh-trow-line"></div>
+        <div class="sh-mile"><div class="sh-year">1948</div><div class="sh-dot"></div><div class="sh-vc"></div><div class="sh-cbox"><div class="sh-hito">Fundación</div><div class="sh-desc">Nace ITISA como empresa de ingeniería industrial en México.</div><div class="sh-img-slot"><label class="ph" id="th_h1"><div class="ph-i"><svg viewBox="0 0 24 24"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg></div><button class="ph-b" tabindex="-1">+ Foto</button><input type="file" accept="image/*" onchange="upImg(this,'th_h1')"></label></div></div></div>
+        <div class="sh-mile"><div class="sh-year">1960s</div><div class="sh-dot"></div><div class="sh-vc"></div><div class="sh-cbox"><div class="sh-hito">Expansión Ferroviaria</div><div class="sh-desc">Inicio de operaciones en infraestructura ferroviaria nacional.</div><div class="sh-img-slot"><label class="ph" id="th_h2"><div class="ph-i"><svg viewBox="0 0 24 24"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg></div><button class="ph-b" tabindex="-1">+ Foto</button><input type="file" accept="image/*" onchange="upImg(this,'th_h2')"></label></div></div></div>
+        <div class="sh-mile"><div class="sh-year">1970s</div><div class="sh-dot"></div><div class="sh-vc"></div><div class="sh-cbox"><div class="sh-hito">Prefabricados</div><div class="sh-desc">Creación de la unidad de concreto prefabricado y preesforzado.</div><div class="sh-img-slot"><label class="ph" id="th_h3"><div class="ph-i"><svg viewBox="0 0 24 24"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg></div><button class="ph-b" tabindex="-1">+ Foto</button><input type="file" accept="image/*" onchange="upImg(this,'th_h3')"></label></div></div></div>
+        <div class="sh-mile"><div class="sh-year">1977</div><div class="sh-dot"></div><div class="sh-vc"></div><div class="sh-cbox"><div class="sh-hito">TUMEX</div><div class="sh-desc">Inicio de fabricación de tubería de acero helicoidal de gran diámetro.</div><div class="sh-img-slot"><label class="ph" id="th_h4"><div class="ph-i"><svg viewBox="0 0 24 24"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg></div><button class="ph-b" tabindex="-1">+ Foto</button><input type="file" accept="image/*" onchange="upImg(this,'th_h4')"></label></div></div></div>
+        <div class="sh-mile"><div class="sh-year">1980</div><div class="sh-dot"></div><div class="sh-vc"></div><div class="sh-cbox"><div class="sh-hito">Durmientes #1</div><div class="sh-desc">ITISA, principal fabricante de durmientes en México.</div><div class="sh-img-slot"><label class="ph" id="th_h5"><div class="ph-i"><svg viewBox="0 0 24 24"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg></div><button class="ph-b" tabindex="-1">+ Foto</button><input type="file" accept="image/*" onchange="upImg(this,'th_h5')"></label></div></div></div>
+        <div class="sh-mile"><div class="sh-year">1990</div><div class="sh-dot"></div><div class="sh-vc"></div><div class="sh-cbox"><div class="sh-hito">ISO · Calidad</div><div class="sh-desc">Primeras certificaciones internacionales de calidad obtenidas.</div><div class="sh-img-slot"><label class="ph" id="th_h6"><div class="ph-i"><svg viewBox="0 0 24 24"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg></div><button class="ph-b" tabindex="-1">+ Foto</button><input type="file" accept="image/*" onchange="upImg(this,'th_h6')"></label></div></div></div>
+        <div class="sh-trow-arr">&#8594;</div>
+      </div>
+
+      <!-- ─── FILA 2: 2000 – 2015 ─── -->
+      <div class="sh-trow">
+        <div class="sh-trow-line"></div>
+        <div class="sh-mile"><div class="sh-year">2000</div><div class="sh-dot"></div><div class="sh-vc"></div><div class="sh-cbox"><div class="sh-hito">Expansión</div><div class="sh-desc">Apertura de nuevas plantas en distintas regiones del país.</div><div class="sh-img-slot"><label class="ph" id="th_h7"><div class="ph-i"><svg viewBox="0 0 24 24"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg></div><button class="ph-b" tabindex="-1">+ Foto</button><input type="file" accept="image/*" onchange="upImg(this,'th_h7')"></label></div></div></div>
+        <div class="sh-mile"><div class="sh-year">2005</div><div class="sh-dot"></div><div class="sh-vc"></div><div class="sh-cbox"><div class="sh-hito">TUMEX · API</div><div class="sh-desc">Fundación formal de TUMEX y primeras certificaciones API.</div><div class="sh-img-slot"><label class="ph" id="th_h8"><div class="ph-i"><svg viewBox="0 0 24 24"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg></div><button class="ph-b" tabindex="-1">+ Foto</button><input type="file" accept="image/*" onchange="upImg(this,'th_h8')"></label></div></div></div>
+        <div class="sh-mile"><div class="sh-year">2010</div><div class="sh-dot"></div><div class="sh-vc"></div><div class="sh-cbox"><div class="sh-hito">LATAM #1</div><div class="sh-desc">ITISA Durmientes, mayor fabricante de Latinoamérica.</div><div class="sh-img-slot"><label class="ph" id="th_h9"><div class="ph-i"><svg viewBox="0 0 24 24"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg></div><button class="ph-b" tabindex="-1">+ Foto</button><input type="file" accept="image/*" onchange="upImg(this,'th_h9')"></label></div></div></div>
+        <div class="sh-mile"><div class="sh-year">2012</div><div class="sh-dot"></div><div class="sh-vc"></div><div class="sh-cbox"><div class="sh-hito">API Q1 + 5L</div><div class="sh-desc">TUMEX obtiene certificación API Q1 + API 5L para tubería.</div><div class="sh-img-slot"><label class="ph" id="th_ha"><div class="ph-i"><svg viewBox="0 0 24 24"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg></div><button class="ph-b" tabindex="-1">+ Foto</button><input type="file" accept="image/*" onchange="upImg(this,'th_ha')"></label></div></div></div>
+        <div class="sh-mile"><div class="sh-year">2015</div><div class="sh-dot"></div><div class="sh-vc"></div><div class="sh-cbox"><div class="sh-hito">27 Millones</div><div class="sh-desc">27 millones de durmientes instalados en México y LATAM.</div><div class="sh-img-slot"><label class="ph" id="th_hb"><div class="ph-i"><svg viewBox="0 0 24 24"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg></div><button class="ph-b" tabindex="-1">+ Foto</button><input type="file" accept="image/*" onchange="upImg(this,'th_hb')"></label></div></div></div>
+        <div class="sh-mile"><div class="sh-year">2017</div><div class="sh-dot"></div><div class="sh-vc"></div><div class="sh-cbox"><div class="sh-hito">IIT</div><div class="sh-desc">Creación de IIT: ingeniería e innovación tecnológica industrial.</div><div class="sh-img-slot"><label class="ph" id="th_hc"><div class="ph-i"><svg viewBox="0 0 24 24"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg></div><button class="ph-b" tabindex="-1">+ Foto</button><input type="file" accept="image/*" onchange="upImg(this,'th_hc')"></label></div></div></div>
+        <div class="sh-trow-arr">&#8594;</div>
+      </div>
+
+      <!-- ─── FILA 3: 2020 – 2024 ─── -->
+      <div class="sh-trow">
+        <div class="sh-trow-line" style="right:0"></div>
+        <div class="sh-mile"><div class="sh-year">2020</div><div class="sh-dot"></div><div class="sh-vc"></div><div class="sh-cbox"><div class="sh-hito">75K m³/año</div><div class="sh-desc">Prefabricados alcanza 75,000 m³/año de capacidad instalada.</div><div class="sh-img-slot"><label class="ph" id="th_hd"><div class="ph-i"><svg viewBox="0 0 24 24"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg></div><button class="ph-b" tabindex="-1">+ Foto</button><input type="file" accept="image/*" onchange="upImg(this,'th_hd')"></label></div></div></div>
+        <div class="sh-mile"><div class="sh-year">2021</div><div class="sh-dot"></div><div class="sh-vc"></div><div class="sh-cbox"><div class="sh-hito">1,000 km Vías</div><div class="sh-desc">ITISA Vías Férreas supera los 1,000 km de infraestructura instalada.</div><div class="sh-img-slot"><label class="ph" id="th_he"><div class="ph-i"><svg viewBox="0 0 24 24"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg></div><button class="ph-b" tabindex="-1">+ Foto</button><input type="file" accept="image/*" onchange="upImg(this,'th_he')"></label></div></div></div>
+        <div class="sh-mile"><div class="sh-year">2022</div><div class="sh-dot"></div><div class="sh-vc"></div><div class="sh-cbox"><div class="sh-hito">Tren Maya</div><div class="sh-desc">Participación en el proyecto ferroviario más emblemático de México.</div><div class="sh-img-slot"><label class="ph" id="th_hf"><div class="ph-i"><svg viewBox="0 0 24 24"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg></div><button class="ph-b" tabindex="-1">+ Foto</button><input type="file" accept="image/*" onchange="upImg(this,'th_hf')"></label></div></div></div>
+        <div class="sh-mile"><div class="sh-year">2024</div><div class="sh-dot" style="background:#60d394;border-color:#60d394"></div><div class="sh-vc"></div><div class="sh-cbox"><div class="sh-hito" style="color:#60d394">75 Años · 100K m³</div><div class="sh-desc">100,000 m³/año de prefabricados. Tres cuartos de siglo de historia.</div><div class="sh-img-slot"><label class="ph" id="th_hg"><div class="ph-i"><svg viewBox="0 0 24 24"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg></div><button class="ph-b" tabindex="-1">+ Foto</button><input type="file" accept="image/*" onchange="upImg(this,'th_hg')"></label></div></div></div>
+        <!-- spacers to fill remaining space -->
+        <div style="flex:1"></div><div style="flex:1"></div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- p7 El Grupo movido después de p0 (¿Quiénes Somos?) -->
+
+<!-- p8 Visión Industrial movido después de El Grupo (página 5) -->
+
+<!-- ════════════ SLIDE — CENTROS DE PRODUCCIÓN ════════════ -->
+<div class="slide smap" id="p_map" data-title="Centros de Producción">
+  <div class="smap-bp">
+    <svg width="100%" height="100%" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" style="position:absolute;inset:0">
+      <rect width="100%" height="100%" fill="#050c1c"/>
+      <rect width="100%" height="100%" fill="url(#c-glg)"/>
+    </svg>
+  </div>
+  <header class="nav">
+    <div class="nav-w"><div class="lz" onclick="document.getElementById('LOGO').click()"><img class="li" id="LI_map" alt="GRUPO ITISA"><div class="lt"><span class="l-n">ITISA</span><span class="l-s">GRUPO</span></div></div></div>
+    <div class="nav-d"><div class="nav-d-col"><span class="t-n">GRUPO ITISA</span><span class="t-s">Infraestructura Nacional</span></div></div>
+  </header>
+  <div class="smap-body">
+
+    <!-- PANEL LATERAL — primer hijo del grid → columna 1 (272px, izquierda) -->
+    <div class="smap-side">
+      <div>
+        <!-- Acento + título -->
+        <div class="smap-header">
+          <p class="s-eye" style="margin-bottom:10px;font-size:9px;letter-spacing:2.5px">Infraestructura Nacional</p>
+          <div class="smap-title">Centros de<br>Producción</div>
+          <span class="s-rule" style="margin-top:10px;margin-bottom:6px"></span>
+          <div class="smap-sub">Infraestructura industrial en las principales regiones de México.</div>
+        </div>
+
+        <div class="smap-legend">
+
+          <!-- Tipo de centro (filtros) -->
+          <div class="smap-leg-title">Tipo de Centro</div>
+          <div class="smap-leg-item" data-filter-type="tipo" data-filter-value="fixed" title="Filtrar: Centro Fijo">
+            <svg width="13" height="13" viewBox="-6 -6 12 12" style="flex-shrink:0;margin-top:2px">
+              <circle r="5.5" fill="#4A8FD4"/><circle r="2.2" fill="#fff"/>
+            </svg>
+            <div class="smap-leg-text">
+              <div class="smap-leg-name">Centro Fijo</div>
+              <div class="smap-leg-unit">EdoMex · Tlaxcala</div>
+            </div>
+          </div>
+          <div class="smap-leg-item" data-filter-type="tipo" data-filter-value="mobile" title="Filtrar: Centro Móvil">
+            <svg width="13" height="13" viewBox="-6 -6 12 12" style="flex-shrink:0;margin-top:2px">
+              <circle r="5.5" fill="rgba(74,143,212,.12)" stroke="#60a5fa" stroke-width="1.8" stroke-dasharray="3 1.8"/>
+              <circle r="2" fill="#60a5fa"/>
+            </svg>
+            <div class="smap-leg-text">
+              <div class="smap-leg-name">Centro Móvil</div>
+              <div class="smap-leg-unit">BC · SON · NLE · NAY</div>
+            </div>
+          </div>
+
+          <div class="smap-leg-item" style="margin-top:2px">
+            <svg width="13" height="13" viewBox="-6 -6 12 12" style="flex-shrink:0;margin-top:2px">
+              <circle r="5.5" fill="#F59E0B"/>
+              <circle r="2.2" fill="#fff"/>
+            </svg>
+            <div class="smap-leg-text">
+              <div class="smap-leg-name">Corporativo</div>
+              <div class="smap-leg-unit">Ciudad de México</div>
+            </div>
+          </div>
+
+          <div class="smap-divider"></div>
+
+          <!-- Línea de producto (filtros) -->
+          <div class="smap-leg-title">Línea de Producto</div>
+          <div class="smap-leg-prod" data-filter-type="producto" data-filter-value="Prefabricados" title="Filtrar: Prefabricados">
+            <div class="smap-leg-sq" style="background:rgba(74,143,212,.22);border:1px solid rgba(74,143,212,.45)"></div>
+            <div class="smap-leg-text">
+              <div class="smap-leg-name">Prefabricados</div>
+              <div class="smap-leg-unit">Todos los centros</div>
+            </div>
+          </div>
+          <div class="smap-leg-prod" data-filter-type="producto" data-filter-value="TUMEX" title="Filtrar: TUMEX">
+            <div class="smap-leg-sq" style="background:rgba(16,185,129,.18);border:1px solid rgba(16,185,129,.40)"></div>
+            <div class="smap-leg-text">
+              <div class="smap-leg-name">TUMEX</div>
+              <div class="smap-leg-unit">Tecamac, EdoMex</div>
+            </div>
+          </div>
+          <div class="smap-leg-prod" data-filter-type="producto" data-filter-value="Durmientes" title="Filtrar: Durmientes">
+            <div class="smap-leg-sq" style="background:rgba(245,158,11,.15);border:1px solid rgba(245,158,11,.38)"></div>
+            <div class="smap-leg-text">
+              <div class="smap-leg-name">Durmientes</div>
+              <div class="smap-leg-unit">Panzacola, Tlaxcala</div>
+            </div>
+          </div>
+
+          <div class="smap-divider"></div>
+
+          <!-- Estado activo -->
+          <div>
+            <div class="smap-leg-title" style="margin-bottom:5px">ESTADO</div>
+            <div id="mx-state-lbl" style="font-size:11px;font-weight:600;color:rgba(255,255,255,.28);letter-spacing:.3px;min-height:16px;transition:color .2s">— Selecciona un estado —</div>
+          </div>
+
+        </div>
+      </div>
+      <!-- smap-footer eliminado por solicitud -->
+    </div>
+
+    <!-- MAPA SVG DE MÉXICO — segundo hijo del grid → columna 2 (1fr, derecha) —  estados cargados dinámicamente desde CDN -->
+    <div class="smap-map" style="position:relative">
+      <div id="mx-tooltip"></div>
+      <!-- Card info planta — aparece en la esquina inferior izquierda del mapa al hacer hover/click -->
+      <div id="mx-card">
+        <div class="mxc-kick" id="mxc-kick">ITISA</div>
+        <div class="mxc-name" id="mxc-name">—</div>
+        <div class="mxc-loc"  id="mxc-loc">—</div>
+
+        <!-- Tipo de Centro -->
+        <div class="mxc-cat-label">Tipo de Centro</div>
+        <div class="mxc-tags" id="mxc-tipo-wrap">
+          <span class="mxc-tag mxc-tag--tipo-Fijo" id="mxc-tipo">Fijo</span>
+        </div>
+
+        <!-- Unidad de Negocio -->
+        <div class="mxc-cat-label">Unidad de Negocio</div>
+        <div class="mxc-tags">
+          <span id="mxc-prod-tags" style="display:contents"></span>
+        </div>
+
+        <div class="mxc-divider"></div>
+
+        <!-- Producción -->
+        <div class="mxc-row">
+          <div style="grid-column:1/-1">
+            <div class="mxc-lbl" id="mxc-prod-label">PRODUCCIÓN DE ESTRUCTURA PREFABRICADA</div>
+          </div>
+          <div>
+            <div class="mxc-lbl">MENSUAL</div>
+            <div class="mxc-val" id="mxc-mensual">—</div>
+          </div>
+          <div>
+            <div class="mxc-lbl">ANUAL</div>
+            <div class="mxc-val" id="mxc-anual">—</div>
+          </div>
+        </div>
+      </div>
+      <svg id="mx-map" class="mx" viewBox="0 0 793 498" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="mxfill" x1="0" y1="0" x2=".7" y2="1">
+            <stop offset="0%" stop-color="rgba(0,73,153,.30)"/>
+            <stop offset="100%" stop-color="rgba(0,30,80,.14)"/>
+          </linearGradient>
+          <filter id="glow"><feGaussianBlur stdDeviation=".4" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+          <filter id="glow2"><feGaussianBlur stdDeviation=".7" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+        </defs>
+
+        <!-- ══════════════════════════════════════════
+             SILUETA DE MÉXICO — Path oficial INEGI
+             Fuente: midir99/mexico-states-in-svg (datos INEGI)
+             ViewBox original: 0 0 67.733 67.733
+             Ciudad positions estimadas en el mismo espacio SVG.
+        ══════════════════════════════════════════ -->
+
+        <!-- Estados cargados por JS desde CDN -->
+        <!-- Decoraciones -->
+        <defs>
+          <radialGradient id="mxglow2" cx="45%" cy="55%" r="60%">
+            <stop offset="0%" stop-color="rgba(0,73,153,.12)"/>
+            <stop offset="100%" stop-color="rgba(0,0,0,0)"/>
+          </radialGradient>
+          <!-- city-glow eliminado: stdDeviation grande crea región rectangular visible -->
+        </defs>
+        <!-- Cargando... -->
+        <text id="mx-loading" x="396" y="249" text-anchor="middle" fill="rgba(74,143,212,.25)" font-size="22" font-family="Inter,sans-serif" font-weight="300" letter-spacing="4">CARGANDO MAPA...</text>
+
+        <!-- Malla triangular interior (decoración blueprint) -->
+        <g stroke="rgba(74,143,212,.08)" stroke-width=".25" fill="none">
+          <line x1="11" y1="15" x2="35" y2="22"/> <line x1="35" y1="22" x2="52" y2="8"/>
+          <line x1="52" y1="8" x2="60" y2="15"/> <line x1="35" y1="22" x2="60" y2="15"/>
+          <line x1="11" y1="15" x2="20" y2="28"/> <line x1="20" y1="28" x2="35" y2="22"/>
+          <line x1="20" y1="28" x2="35" y2="38"/> <line x1="35" y1="38" x2="35" y2="22"/>
+          <line x1="35" y1="38" x2="52" y2="30"/> <line x1="52" y1="30" x2="60" y2="15"/>
+          <line x1="52" y1="30" x2="60" y2="38"/> <line x1="60" y1="38" x2="60" y2="15"/>
+          <line x1="35" y1="38" x2="23" y2="43"/> <line x1="23" y1="43" x2="20" y2="28"/>
+          <line x1="23" y1="43" x2="34" y2="46"/> <line x1="34" y1="46" x2="35" y2="38"/>
+          <line x1="34" y1="46" x2="44" y2="48"/> <line x1="44" y1="48" x2="52" y2="30"/>
+          <line x1="44" y1="48" x2="57" y2="42"/> <line x1="57" y1="42" x2="60" y2="38"/>
+          <line x1="23" y1="43" x2="20" y2="52"/> <line x1="34" y1="46" x2="44" y2="55"/>
+          <line x1="44" y1="48" x2="44" y2="55"/> <line x1="44" y1="55" x2="57" y2="42"/>
+        </g>
+
+        <!-- Brillo glow sobre estados -->
+        <rect width="793" height="498" fill="url(#mxglow2)" style="pointer-events:none;"/>
+
+        <!-- ═══════════════════════════════════════════════════
+             CENTROS DE PRODUCCIÓN — Fórmula calibrada con 2 puntos SVG reales:
+               BCN tip  (32.52°N,117.0°W) → SVG (112, 19) — del path BCN
+               AGS path (21.88°N,102.3°W) → SVG (390, 310) — del path AGS
+             Escala derivada: x = 110 + 19.1*(117.0−lon),  y = 20 + 27.2*(32.52−lat)
+
+             1. Tijuana,    BC  (32.52N,117.00W) → (110, 20) ← NW, esquina sup-izq
+             2. Nogales,   SON  (31.33N,110.95W) → (226, 52) ← NW mainland
+             3. Monterrey, NLE  (25.67N,100.31W) → (429,206) ← NE
+             4. Tepic,     NAY  (21.50N,104.90W) → (341,320) ← costa oeste
+             5. Tecamac,   MEX  (19.71N, 98.97W) → (454,368) ← centro
+             6. Panzacola, TLA  (19.28N, 98.25W) → (468,380) ← este de MEX
+             7. Cancún,    ROO  (21.17N, 86.85W) → (675,329) ← Península QRoo
+             Hover → dim mapa + resalta estado · Click → zoom animado al estado
+        ═══════════════════════════════════════════════════ -->
+
+        <!-- Pines creados dinámicamente por JS con repositionPins() post-getBBox
+             Solo se definen las estructura SVG; el JS rellena cx/cy/text después
+             de que los estados cargan desde CDN. Las posiciones iniciales son
+             placeholders — se sobreescriben en < 1s. -->
+
+        <!-- ── 4 pines de producción: estructura SVG inicial.
+             JS reposiciona con getBBox() tras cargar estados del CDN.
+             La estructura es: pulse circle + dot circle + inner dot + text×2 ── -->
+        <!-- MÓVIL: Tijuana BC — absX=59 (oeste del delta Colorado, esquina noroeste BCN) -->
+        <g class="mx-city" id="ci_bc">
+          <circle cx="59" cy="25" r="9" fill="none" stroke="#60a5fa" stroke-width="1.2" opacity="0">
+            <animate attributeName="r" values="9;26;9" dur="2.2s" repeatCount="indefinite"/>
+            <animate attributeName="opacity" values=".6;0;.6" dur="2.2s" repeatCount="indefinite"/>
+          </circle>
+          <circle cx="59" cy="25" r="9"   fill="rgba(74,143,212,.10)" stroke="#60a5fa" stroke-width="2" stroke-dasharray="3.5 2"/>
+          <circle cx="59" cy="25" r="2.5" fill="#60a5fa"/>
+          <rect  class="mx-pill" x="71" y="15" width="90" height="22" rx="4" ry="4"/>
+          <text class="mx-lbl-state" x="78" y="26" font-size="8"  font-family="Inter,sans-serif" font-weight="800" fill="#d8e8ff" letter-spacing=".6">BAJA CALIFORNIA</text>
+          <text class="mx-lbl-city"  x="78" y="35" font-size="7"  font-family="Inter,sans-serif" font-weight="400" fill="rgba(180,210,255,.55)">Tijuana</text>
+        </g>
+        <!-- MÓVIL: Nogales Sonora — absX=196 -->
+        <g class="mx-city" id="ci_son">
+          <circle cx="196" cy="57" r="9" fill="none" stroke="#60a5fa" stroke-width="1.2" opacity="0">
+            <animate attributeName="r" values="9;26;9" dur="2.2s" repeatCount="indefinite" begin=".4s"/>
+            <animate attributeName="opacity" values=".6;0;.6" dur="2.2s" repeatCount="indefinite" begin=".4s"/>
+          </circle>
+          <circle cx="196" cy="57" r="9"   fill="rgba(74,143,212,.10)" stroke="#60a5fa" stroke-width="2" stroke-dasharray="3.5 2"/>
+          <circle cx="196" cy="57" r="2.5" fill="#60a5fa"/>
+          <rect  class="mx-pill" x="208" y="47" width="56" height="22" rx="4" ry="4"/>
+          <text class="mx-lbl-state" x="214" y="58" font-size="8"  font-family="Inter,sans-serif" font-weight="800" fill="#d8e8ff" letter-spacing=".6">SONORA</text>
+          <text class="mx-lbl-city"  x="214" y="67" font-size="7"  font-family="Inter,sans-serif" font-weight="400" fill="rgba(180,210,255,.55)">Nogales</text>
+        </g>
+        <!-- MÓVIL: Cadereyta NL -->
+        <g class="mx-city" id="ci_nle">
+          <circle cx="440" cy="210" r="9" fill="none" stroke="#60a5fa" stroke-width="1.2" opacity="0">
+            <animate attributeName="r" values="9;26;9" dur="2.2s" repeatCount="indefinite" begin=".8s"/>
+            <animate attributeName="opacity" values=".6;0;.6" dur="2.2s" repeatCount="indefinite" begin=".8s"/>
+          </circle>
+          <circle cx="440" cy="210" r="9"   fill="rgba(74,143,212,.10)" stroke="#60a5fa" stroke-width="2" stroke-dasharray="3.5 2"/>
+          <circle cx="440" cy="210" r="2.5" fill="#60a5fa"/>
+          <rect  class="mx-pill" x="408" y="220" width="64" height="22" rx="4" ry="4"/>
+          <text class="mx-lbl-state" x="440" y="231" text-anchor="middle" font-size="8"  font-family="Inter,sans-serif" font-weight="800" fill="#d8e8ff" letter-spacing=".6">NUEVO LEÓN</text>
+          <text class="mx-lbl-city"  x="440" y="240" text-anchor="middle" font-size="7"  font-family="Inter,sans-serif" font-weight="400" fill="rgba(180,210,255,.55)">Cadereyta</text>
+        </g>
+        <!-- MÓVIL: Tepic Nayarit -->
+        <g class="mx-city" id="ci_nay">
+          <circle cx="340" cy="310" r="9" fill="none" stroke="#60a5fa" stroke-width="1.2" opacity="0">
+            <animate attributeName="r" values="9;26;9" dur="2.2s" repeatCount="indefinite" begin="1.0s"/>
+            <animate attributeName="opacity" values=".6;0;.6" dur="2.2s" repeatCount="indefinite" begin="1.0s"/>
+          </circle>
+          <circle cx="340" cy="310" r="9"   fill="rgba(74,143,212,.10)" stroke="#60a5fa" stroke-width="2" stroke-dasharray="3.5 2"/>
+          <circle cx="340" cy="310" r="2.5" fill="#60a5fa"/>
+          <rect  class="mx-pill" x="314" y="320" width="52" height="22" rx="4" ry="4"/>
+          <text class="mx-lbl-state" x="340" y="331" text-anchor="middle" font-size="8"  font-family="Inter,sans-serif" font-weight="800" fill="#d8e8ff" letter-spacing=".6">NAYARIT</text>
+          <text class="mx-lbl-city"  x="340" y="340" text-anchor="middle" font-size="7"  font-family="Inter,sans-serif" font-weight="400" fill="rgba(180,210,255,.55)">Tepic</text>
+        </g>
+        <!-- FIJO: Tecamac EdoMex -->
+        <g class="mx-city" id="ci_mex">
+          <circle cx="455" cy="360" r="10" fill="none" stroke="#4A8FD4" stroke-width="1.2" opacity="0">
+            <animate attributeName="r" values="9;28;9" dur="2.2s" repeatCount="indefinite" begin="1.2s"/>
+            <animate attributeName="opacity" values=".7;0;.7" dur="2.2s" repeatCount="indefinite" begin="1.2s"/>
+          </circle>
+          <circle cx="455" cy="360" r="9"   fill="#4A8FD4" opacity=".97"/>
+          <circle cx="455" cy="360" r="3.5" fill="#fff"    opacity=".95"/>
+          <!-- label a la IZQUIERDA del pin para evitar encimamiento con Tlaxcala -->
+          <rect  class="mx-pill" x="349" y="349" width="94" height="22" rx="4" ry="4"/>
+          <text class="mx-lbl-state" x="436" y="360" text-anchor="end" font-size="8"  font-family="Inter,sans-serif" font-weight="800" fill="#d8e8ff" letter-spacing=".6">ESTADO DE MÉXICO</text>
+          <text class="mx-lbl-city"  x="436" y="369" text-anchor="end" font-size="7"  font-family="Inter,sans-serif" font-weight="400" fill="rgba(180,210,255,.55)">Tecamac</text>
+        </g>
+        <!-- FIJO: Panzacola Tlaxcala -->
+        <g class="mx-city" id="ci_tla">
+          <circle cx="475" cy="372" r="9" fill="none" stroke="#4A8FD4" stroke-width="1.2" opacity="0">
+            <animate attributeName="r" values="9;28;9" dur="2.2s" repeatCount="indefinite" begin="1.6s"/>
+            <animate attributeName="opacity" values=".7;0;.7" dur="2.2s" repeatCount="indefinite" begin="1.6s"/>
+          </circle>
+          <circle cx="475" cy="372" r="9"   fill="#4A8FD4" opacity=".92"/>
+          <circle cx="475" cy="372" r="3.5" fill="#fff"    opacity=".92"/>
+          <rect  class="mx-pill" x="487" y="362" width="56" height="22" rx="4" ry="4"/>
+          <text class="mx-lbl-state" x="515" y="373" text-anchor="middle" font-size="8"  font-family="Inter,sans-serif" font-weight="800" fill="#d8e8ff" letter-spacing=".6">TLAXCALA</text>
+          <text class="mx-lbl-city"  x="515" y="382" text-anchor="middle" font-size="7"  font-family="Inter,sans-serif" font-weight="400" fill="rgba(180,210,255,.55)">Panzacola</text>
+        </g>
+
+        <!-- CORPORATIVO CDMX — Solo decorativo, sin interacción.
+             CDMX (19.43°N,99.13°W) es una pequeña entidad rodeada por EdoMex.
+             A esta escala de mapa siempre aparece dentro/adyacente al polígono de EdoMex.
+             Pin intencionalmente pequeño (r=3) para indicar presencia sin confundir con centros productivos. -->
+        <g id="ci_cdmx" style="pointer-events:none">
+          <circle cx="482" cy="375" r="3" fill="none" stroke="#F59E0B" stroke-width=".8" opacity="0">
+            <animate attributeName="r" values="3;12;3" dur="2.5s" repeatCount="indefinite" begin="2.0s"/>
+            <animate attributeName="opacity" values=".55;0;.55" dur="2.5s" repeatCount="indefinite" begin="2.0s"/>
+          </circle>
+          <circle cx="482" cy="375" r="3"   fill="#F59E0B" opacity=".85"/>
+          <circle cx="482" cy="375" r="1.2" fill="#fff"    opacity=".95"/>
+          <!-- Pill debajo del punto — igual que las otras etiquetas -->
+          <rect class="mx-pill" x="456" y="380" width="52" height="20" rx="4" ry="4"/>
+          <text x="482" y="389" text-anchor="middle" font-size="7" font-family="Inter,sans-serif" font-weight="800" fill="#d8e8ff" letter-spacing=".6">CDMX</text>
+          <text x="482" y="397" text-anchor="middle" font-size="6"  font-family="Inter,sans-serif" font-weight="400" fill="rgba(180,210,255,.55)">Corporativo</text>
+        </g>
+
+        <!-- Escala eliminada -->
+        <g transform="translate(32,450)">
+          <polygon points="0,-14 -5,3 0,-3 5,3" fill="rgba(74,143,212,.58)"/>
+          <line x1="0" y1="3" x2="0" y2="14" stroke="rgba(74,143,212,.26)" stroke-width="1.5"/>
+          <text x="0" y="26" fill="rgba(74,143,212,.44)" font-size="14" font-family="Inter,sans-serif" font-weight="800" text-anchor="middle">N</text>
+        </g>
+      </svg>
+    </div>
+
+  </div>
+</div>
+
+<!-- ════════════ SLIDE — NUESTROS CLIENTES (movido aquí) ════════════ -->
+<div class="slide sc" id="p18" data-title="Nuestros Clientes">
+  <header class="nav"><div class="nav-w"><div class="lz" onclick="document.getElementById('LOGO').click()"><img class="li" id="LI_cl" alt="GRUPO ITISA"><div class="lt"><span class="l-n">ITISA</span><span class="l-s">GRUPO</span></div></div></div><div class="nav-d"><div class="nav-d-col"><span class="t-n">GRUPO ITISA</span><span class="t-s">Clientes</span></div></div></header>
+  <div class="sc-body">
+    <div class="sc-header"><p class="s-eye" style="margin-bottom:12px">Clientes Principales</p><div class="sc-title">Nuestros Clientes</div><span class="s-rule" style="margin-bottom:12px"></span><div class="sc-sub">Principales organizaciones atendidas por Grupo ITISA en México y Latinoamérica</div></div>
+    <div class="sc-cols">
+      <div>
+        <div class="sc-col-title">Gobierno y Concesionarias</div>
+        <ul class="sc-list"><li>SCT — Secretaría de Comunicaciones</li><li>FONATUR</li><li>SEDENA</li><li>CPKC</li><li>Ferromex</li><li>Ferrosur</li><li>FCEV</li><li>ADIF (España)</li></ul>
+      </div>
+      <div>
+        <div class="sc-col-title">Constructor e Industrial</div>
+        <ul class="sc-list"><li>ICA</li><li>Grupo Hermes</li><li>Tradeco</li><li>Coconal</li><li>PINFRA</li><li>CICSA</li><li>GICSA</li><li>GNP</li></ul>
+      </div>
+      <div>
+        <div class="sc-col-title">Energía y Desarrollo</div>
+        <ul class="sc-list"><li>PEMEX</li><li>SENER</li><li>SADM</li><li>SACMEX</li><li>Banobras</li><li>SIIAO Infraestructura</li><li>DESC</li><li>FEMSA</li></ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ════════════ SLIDE — CERTIFICACIONES (movido aquí) ════════════ -->
+<div class="slide sa" id="p19" data-title="Certificaciones">
+  <header class="nav nav-lt"><div class="nav-w"><div class="lz" onclick="document.getElementById('LOGO').click()"><img class="li" id="LI_pr" alt="GRUPO ITISA"><div class="lt"><span class="l-n">ITISA</span><span class="l-s">GRUPO</span></div></div></div><div class="nav-d"><div class="nav-d-col"><span class="t-n">GRUPO ITISA</span><span class="t-s">Reconocimientos</span></div></div></header>
+  <div class="sa-body">
+    <p class="s-eye corp" style="margin-bottom:12px">Reconocimientos</p>
+    <div class="sa-title">Reconocimientos y Certificaciones</div>
+    <span class="s-rule corp" style="margin-bottom:14px"></span>
+    <div class="sa-sub">Premios de la industria · Certificaciones internacionales · Acreditaciones</div>
+    <div class="sa-cols">
+      <div>
+        <div class="sa-col-title">Premios y Reconocimientos</div>
+        <div class="sa-item"><div class="sa-bullet-r"></div><div class="sa-item-text"><div class="sa-item-name">Empresa del Año en Infraestructura</div><div class="sa-item-detail">2022 · Cámara Mexicana de la Industria de la Construcción</div></div></div>
+        <div class="sa-item"><div class="sa-bullet-r"></div><div class="sa-item-text"><div class="sa-item-name">Top 100 Empresas Constructoras</div><div class="sa-item-detail">2021 · Revista Expansión</div></div></div>
+        <div class="sa-item"><div class="sa-bullet-r"></div><div class="sa-item-text"><div class="sa-item-name">Mayor Fabricante Durmientes LATAM</div><div class="sa-item-detail">2020 · ALAF — Asociación Latinoamericana Ferroviaria</div></div></div>
+        <div class="sa-item"><div class="sa-bullet-r"></div><div class="sa-item-text"><div class="sa-item-name">Premio Nacional de Calidad</div><div class="sa-item-detail">2019 · INLAC</div></div></div>
+        <div class="sa-item"><div class="sa-bullet-r"></div><div class="sa-item-text"><div class="sa-item-name">Reconocimiento a la Innovación Industrial</div><div class="sa-item-detail">2023 · CONCAMIN</div></div></div>
+      </div>
+      <div>
+        <div class="sa-col-title">Certificaciones y Acreditaciones</div>
+        <div class="sa-item"><div class="sa-bullet-c"></div><div class="sa-item-text"><div class="sa-item-name">ISO 9001:2015</div><div class="sa-item-detail">Sistema de Gestión de Calidad · Bureau Veritas</div></div></div>
+        <div class="sa-item"><div class="sa-bullet-c"></div><div class="sa-item-text"><div class="sa-item-name">ISO 14001:2015</div><div class="sa-item-detail">Gestión Ambiental · TÜV Rheinland</div></div></div>
+        <div class="sa-item"><div class="sa-bullet-c"></div><div class="sa-item-text"><div class="sa-item-name">ISO 45001:2018</div><div class="sa-item-detail">Seguridad y Salud Ocupacional · IMNC</div></div></div>
+        <div class="sa-item"><div class="sa-bullet-c"></div><div class="sa-item-text"><div class="sa-item-name">API Q1 + API 5L</div><div class="sa-item-detail">Especificación Tubería de Acero · API Institute</div></div></div>
+        <div class="sa-item"><div class="sa-bullet-c"></div><div class="sa-item-text"><div class="sa-item-name">EMA Acreditación</div><div class="sa-item-detail">Laboratorio de Pruebas y Ensayos · EMA México</div></div></div>
+        <div class="sa-item"><div class="sa-bullet-c"></div><div class="sa-item-text"><div class="sa-item-name">AWWA C-200</div><div class="sa-item-detail">Tubería de Acero Agua Potable · AWWA</div></div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ════════════ SLIDE — PROYECTOS ICÓNICOS (movido aquí) ════════════ -->
+<div class="slide" id="p2" data-title="Proyectos Icónicos">
+  <div class="isl bg-sl">
+    <label class="ph" id="bg3">
+      <div class="ph-i"><svg viewBox="0 0 24 24"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg></div>
+      <span class="ph-t">Foto proyecto ferroviario / infraestructura</span>
+      <span class="ph-h">Vista aérea · Proyecto GRUPO ITISA</span>
+      <button class="ph-b" tabindex="-1">+ Cargar foto</button>
+      <input type="file" accept="image/*" onchange="upBg(this,'bg3','ov3')">
+    </label>
+  </div>
+  <div class="s3-ov" id="ov3"></div>
+  <header class="nav">
+    <div class="nav-w"><div class="lz" onclick="document.getElementById('LOGO').click()"><img class="li" id="LI3" alt="ITISA GRUPO"><div class="lt" id="LT3"><span class="l-n">ITISA</span><span class="l-s">GRUPO</span></div></div></div>
+    <div class="nav-d"><div class="nav-d-col"><span class="t-n">GRUPO ITISA</span><span class="t-s">Proyectos</span></div></div>
+  </header>
+  <div class="s3-hero">
+    <p class="s-eye" style="margin-bottom:14px">Portafolio de Proyectos</p>
+    <h1 class="s3-title">Proyectos que definen<br>la infraestructura de México</h1>
+    <span class="s-rule" style="margin-top:16px"></span>
+  </div>
+  <div class="s3-strip">
+    <div class="s3-row">
+      <div class="s3-st"><span class="s3-ln"></span><span class="s3-nt"><strong>&gt;27M</strong> DURMIENTES</span></div>
+      <div class="s3-dv"></div>
+      <div class="s3-st"><span class="s3-ln"></span><span class="s3-nt"><strong>1,011</strong> KM VÍAS</span></div>
+      <div class="s3-dv"></div>
+      <div class="s3-st"><span class="s3-ln"></span><span class="s3-nt"><strong>75</strong> AÑOS</span></div>
+    </div>
+    <p class="s3-desc">Desde el Tren Maya hasta sistemas hidráulicos nacionales y complejos prefabricados de alto impacto: infraestructura que transforma México y Latinoamérica.</p>
+  </div>
+</div>
+
+<!-- ════════════ SLIDE 9 — ITISA PREFABRICADOS COVER ════════════ -->
+<!-- ════════════ PREFABRICADOS — PORTADA EDITORIAL (plantilla TUMEX p_tx_cov · s0/c0-*) ════════════ -->
+<div class="slide s0" id="p9" data-title="ITISA Prefabricados">
+  <div class="c0-bp">
+    <svg width="100%" height="100%" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" style="position:absolute;inset:0">
+      <defs>
+        <pattern id="c-gsm-pf" width="20" height="20" patternUnits="userSpaceOnUse"><path d="M20 0L0 0 0 20" fill="none" stroke="rgba(28,80,175,.052)" stroke-width=".5"/></pattern>
+        <pattern id="c-glg-pf" width="80" height="80" patternUnits="userSpaceOnUse"><rect width="80" height="80" fill="url(#c-gsm-pf)"/><path d="M80 0L0 0 0 80" fill="none" stroke="rgba(28,80,175,.095)" stroke-width="1"/></pattern>
+      </defs>
+      <rect width="100%" height="100%" fill="#050c1c"/>
+      <rect width="100%" height="100%" fill="url(#c-glg-pf)"/>
+      <circle cx="165" cy="730" r="130" fill="none" stroke="rgba(28,80,175,.13)" stroke-width="1.5"/>
+      <circle cx="165" cy="730" r="92"  fill="none" stroke="rgba(28,80,175,.08)" stroke-width="1"/>
+      <circle cx="165" cy="730" r="42"  fill="none" stroke="rgba(28,80,175,.10)" stroke-width="1.2"/>
+      <rect x="50" y="110" width="320" height="190" fill="none" stroke="rgba(28,80,175,.075)" stroke-width="1"/>
+      <rect x="72" y="130" width="276" height="150" fill="none" stroke="rgba(28,80,175,.04)" stroke-width=".7"/>
+      <line x1="0" y1="76" x2="1440" y2="76" stroke="rgba(28,80,175,.055)" stroke-width=".8"/>
+      <line x1="0" y1="824" x2="1440" y2="824" stroke="rgba(28,80,175,.055)" stroke-width=".8"/>
+    </svg>
+  </div>
+  <div class="c0-logo-sec">
+    <div class="c0-logo-itisa" onclick="document.getElementById('LOGO').click()" title="Clic para cargar logo ITISA">
+      <img class="li" id="LI_pf_cov" alt="ITISA GRUPO">
+      <div class="lt" id="LT_pf_cov"><span class="l-n">ITISA</span><span class="l-s">GRUPO</span></div>
+    </div>
+    <div class="c0-logo-tumex" onclick="document.getElementById('LOGO_UNIT_pf').click()" title="Clic para cargar logo Prefabricados">
+      <img class="c0-logo-img" id="c0LogoImg_pf" alt="ITISA Prefabricados">
+      <div class="c0-logo-ph" id="c0LogoPh_pf"><span class="c0-tumex-name">PREFABRICADOS</span></div>
+      <input type="file" id="LOGO_UNIT_pf" accept="image/*" style="display:none" onchange="upLogoUnit(this,'c0LogoImg_pf','c0LogoPh_pf')">
+    </div>
+  </div>
+  <div class="c0-split">
+    <div class="c0-text">
+      <div class="c0-main">
+        <div class="c0-accent"></div>
+        <h1 class="c0-title">PREFABRICADOS</h1>
+        <p class="c0-desc">Diseño, fabricación y montaje de elementos <strong>prefabricados y preesforzados</strong> de concreto para infraestructura, edificación e industria desde 1948.</p>
+        <div class="c0-spec-block">
+          <p class="c0-cta-label">Especialidades</p>
+          <div class="c0-pills">
+            <div class="c0-pill" data-num="01"><div class="c0-pill-ttl">Estructural</div><div class="c0-pill-sub">Trabes · Marcos rígidos</div></div>
+            <div class="c0-pill" data-num="02"><div class="c0-pill-ttl">Edificación</div><div class="c0-pill-sub">Losas · Columnas · Pilotes</div></div>
+          </div>
+        </div>
+      </div>
+      <div class="c0-footer">
+        <span class="c0-fi"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>itisa.com.mx</span>
+        <span class="c0-fi"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>México</span>
+      </div>
+    </div>
+    <div class="isl c0-ph">
+      <label class="ph" id="cov-bg-pf">
+        <div class="ph-i"><svg viewBox="0 0 24 24"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg></div>
+        <span class="ph-t">Foto de portada</span>
+        <span class="ph-h">Planta · prefabricados · instalación</span>
+        <button class="ph-b" tabindex="-1">+ Cargar foto</button>
+        <input type="file" accept="image/*" onchange="upBg(this,'cov-bg-pf','')">
+      </label>
+    </div>
+  </div>
+</div>
+
+<!-- ════ PREFABRICADOS · PRODUCTOS Y SERVICIOS (plantilla TUMEX p_tx_p2 · s3-hero) ════ -->
+<div class="slide" id="p_pf_esp" data-title="Productos y Servicios · Prefabricados">
+  <div class="isl bg-sl">
+    <label class="ph" id="bg_pf_ps">
+      <div class="ph-i"><svg viewBox="0 0 24 24"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg></div>
+      <span class="ph-t">Foto aérea de instalación</span>
+      <span class="ph-h">Vista de planta o proyecto (a sangre)</span>
+      <button class="ph-b" tabindex="-1">+ Cargar foto</button>
+      <input type="file" accept="image/*" onchange="upBg(this,'bg_pf_ps','ov_pf_ps')">
+    </label>
+  </div>
+  <div class="s3-ov" id="ov_pf_ps"></div>
+  <header class="nav">
+    <div class="nav-w"><div class="lz" onclick="document.getElementById('LOGO').click()"><img class="li" id="LI_pf_ps" alt="ITISA GRUPO"><div class="lt" id="LT_pf_ps"><span class="l-n">ITISA</span><span class="l-s">GRUPO</span></div></div></div>
+    <div class="nav-d"><div class="nav-d-col"><span class="t-n">ITISA Prefabricados</span><span class="t-s">Productos y Servicios</span></div></div>
+  </header>
+  <div class="s3-hero">
+    <h1 class="s3-title">Cuatro líneas de<br>especialización</h1>
+  </div>
+  <div class="s3-strip">
+    <div class="s3-row">
+      <div class="s3-st"><span class="s3-ln"></span><span class="s3-nt"><strong>4</strong> LÍNEAS</span></div>
+      <div class="s3-dv"></div>
+      <div class="s3-st"><span class="s3-ln"></span><span class="s3-nt"><strong>200+</strong> SKUs</span></div>
+      <div class="s3-dv"></div>
+      <div class="s3-st"><span class="s3-ln"></span><span class="s3-nt"><strong>75+</strong> AÑOS</span></div>
+    </div>
+    <p class="s3-desc">Estructural, edificación, infraestructura y elementos especiales: concreto preesforzado y pretensado para todo tipo de obra civil e industrial. Normas NMX · ACI · AASHTO.</p>
+  </div>
+</div>
+
+<!-- ════ PREFABRICADOS · CATÁLOGO DE PRODUCTOS (plantilla sap 3-tiers, igual a p_tx_prod) ════ -->
+<div class="slide sap" id="p_pf_prod" data-title="Catálogo · Prefabricados">
+  <header class="nav nav-lt">
+    <div class="nav-w"><div class="lz" onclick="document.getElementById('LOGO').click()"><img class="li" id="LI_pfp" alt="GRUPO ITISA"><div class="lt"><span class="l-n">ITISA</span><span class="l-s">GRUPO</span></div></div></div>
+    <div class="nav-d"><div class="nav-d-col"><span class="t-n">ITISA Prefabricados</span><span class="t-s">Catálogo de Productos</span></div></div>
+  </header>
+  <div style="position:absolute;top:var(--nav-h);left:0;right:0;bottom:0;display:flex;flex-direction:column;padding:24px 56px 20px;overflow:hidden;">
+    <div class="ap-page-hdr"><div>
+      <div class="ap-page-title">Catálogo de Productos</div>
+      <div class="ap-page-sub">Concreto prefabricado y preesforzado · Trabes · Losas · Columnas · Pilotes · NMX-C-155 · ACI 318</div>
+    </div></div>
+    <div class="ap-tier ap-tier-1">
+      <div class="ap-tier-hdr"><div class="ap-tier-bar"></div><span class="ap-tier-label">Estructural Principal</span><span class="ap-tier-count">2 productos</span></div>
+      <div class="ap-track" id="apt_pfp_1">
+        <div class="ap-card ap-tier-1"><div class="isl"><label class="ph" id="ph_pfp_1_1"><div class="ph-i"><svg viewBox="0 0 24 24"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg></div><button class="ph-b" tabindex="-1">+ Foto</button><input type="file" accept="image/*" onchange="upImg(this,'ph_pfp_1_1')"></label></div><div class="ap-ov"><div class="ap-name">Trabes T</div><div class="ap-client">8, 10, 12, 14, 16, 18 m</div></div></div>
+        <div class="ap-card ap-tier-1"><div class="isl"><label class="ph" id="ph_pfp_1_2"><div class="ph-i"><svg viewBox="0 0 24 24"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg></div><button class="ph-b" tabindex="-1">+ Foto</button><input type="file" accept="image/*" onchange="upImg(this,'ph_pfp_1_2')"></label></div><div class="ap-ov"><div class="ap-name">Losas Alveolares</div><div class="ap-client">15 · 20 · 25 · 30 · 40 cm</div></div></div>
+      </div>
+    </div>
+    <div class="ap-tier ap-tier-2">
+      <div class="ap-tier-hdr"><div class="ap-tier-bar"></div><span class="ap-tier-label">Elementos Verticales</span><span class="ap-tier-count">3 productos</span></div>
+      <div class="ap-track" id="apt_pfp_2">
+        <div class="ap-card ap-tier-2"><div class="isl"><label class="ph" id="ph_pfp_2_1"><div class="ph-i"><svg viewBox="0 0 24 24"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg></div><button class="ph-b" tabindex="-1">+ Foto</button><input type="file" accept="image/*" onchange="upImg(this,'ph_pfp_2_1')"></label></div><div class="ap-ov"><div class="ap-name">Columnas</div><div class="ap-client">Cuadradas · Circulares</div></div></div>
+        <div class="ap-card ap-tier-2"><div class="isl"><label class="ph" id="ph_pfp_2_2"><div class="ph-i"><svg viewBox="0 0 24 24"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg></div><button class="ph-b" tabindex="-1">+ Foto</button><input type="file" accept="image/*" onchange="upImg(this,'ph_pfp_2_2')"></label></div><div class="ap-ov"><div class="ap-name">Pilas y Pilotes</div><div class="ap-client">Hasta 40 m de longitud</div></div></div>
+        <div class="ap-card ap-tier-2"><div class="isl"><label class="ph" id="ph_pfp_2_3"><div class="ph-i"><svg viewBox="0 0 24 24"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg></div><button class="ph-b" tabindex="-1">+ Foto</button><input type="file" accept="image/*" onchange="upImg(this,'ph_pfp_2_3')"></label></div><div class="ap-ov"><div class="ap-name">Marcos Rígidos</div><div class="ap-client">Estructurales · Industrial</div></div></div>
+      </div>
+    </div>
+    <div class="ap-tier ap-tier-3">
+      <div class="ap-tier-hdr"><div class="ap-tier-bar"></div><span class="ap-tier-label">Bajo Pedido y Especiales</span><span class="ap-tier-count">3 productos</span></div>
+      <div class="ap-track" id="apt_pfp_3">
+        <div class="ap-card ap-tier-3"><div class="isl"><label class="ph" id="ph_pfp_3_1"><div class="ph-i"><svg viewBox="0 0 24 24"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg></div><button class="ph-b" tabindex="-1">+ Foto</button><input type="file" accept="image/*" onchange="upImg(this,'ph_pfp_3_1')"></label></div><div class="ap-ov"><div class="ap-name">Postes</div><div class="ap-client">Iluminación · Comunicaciones</div></div></div>
+        <div class="ap-card ap-tier-3"><div class="isl"><label class="ph" id="ph_pfp_3_2"><div class="ph-i"><svg viewBox="0 0 24 24"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg></div><button class="ph-b" tabindex="-1">+ Foto</button><input type="file" accept="image/*" onchange="upImg(this,'ph_pfp_3_2')"></label></div><div class="ap-ov"><div class="ap-name">Elementos BIM</div><div class="ap-client">Diseño in-house</div></div></div>
+        <div class="ap-card ap-tier-3"><div class="isl"><label class="ph" id="ph_pfp_3_3"><div class="ph-i"><svg viewBox="0 0 24 24"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg></div><button class="ph-b" tabindex="-1">+ Foto</button><input type="file" accept="image/*" onchange="upImg(this,'ph_pfp_3_3')"></label></div><div class="ap-ov"><div class="ap-name">Durmientes Especiales</div><div class="ap-client">Geometrías por proyecto</div></div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ════════════ PREFABRICADOS — CAPACIDADES (plantilla TUMEX p_tx_p0 · s1) ════════════ -->
+<div class="slide s1" id="p10" data-title="Capacidades · Prefabricados">
+  <div class="isl bg-sl">
+    <label class="ph" id="bg_pf_cap">
+      <div class="ph-i"><svg viewBox="0 0 24 24"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg></div>
+      <span class="ph-t">Imagen de fondo · Capacidades</span>
+      <span class="ph-h">Planta industrial Prefabricados (foto a sangre)</span>
+      <button class="ph-b" tabindex="-1">+ Cargar foto</button>
+      <input type="file" accept="image/*" onchange="upBg(this,'bg_pf_cap','ov_pf_cap')">
+    </label>
+  </div>
+  <div class="s1-ov" id="ov_pf_cap"></div>
+  <header class="nav">
+    <div class="nav-w">
+      <div class="lz" onclick="document.getElementById('LOGO').click()">
+        <img class="li" id="LI_pf_cap" alt="ITISA GRUPO">
+        <div class="lt" id="LT_pf_cap"><span class="l-n">ITISA</span><span class="l-s">GRUPO</span></div>
+      </div>
+    </div>
+    <div class="nav-d"><span class="t-n">ITISA Prefabricados</span></div>
+  </header>
+  <div class="s1-hero">
+    <div class="s1-top">
+      <p class="s1-tag">Capacidad Instalada</p>
+      <h1 class="s1-title">Líder nacional en<br>concreto prefabricado</h1>
+      <div class="s1-rule"></div>
+      <p class="s1-eye">Cinco plantas industriales · ISO 9001/14001/45001 · desde 1948</p>
+    </div>
+  </div>
+  <div class="s1-strip">
+    <div class="cin">
+      <span class="cin-line"></span>
+      <span class="cin-n"><span class="ctr" data-to="100" data-sfx="K">0</span><span class="cin-u"> m³</span></span>
+      <span class="cin-l">Producción Anual</span>
+      <span class="cin-s">Capacidad instalada</span>
+    </div>
+    <div class="cin">
+      <span class="cin-line"></span>
+      <span class="cin-n"><span class="ctr" data-to="5">0</span></span>
+      <span class="cin-l">Plantas</span>
+      <span class="cin-s">Operativas en México</span>
+    </div>
+    <div class="cin">
+      <span class="cin-line"></span>
+      <span class="cin-n"><span class="ctr" data-to="33.5" data-dec="1">0</span><span class="cin-u"> ha</span></span>
+      <span class="cin-l">Planta Principal</span>
+      <span class="cin-s">Superficie total</span>
+    </div>
+  </div>
+</div>
+
+<!-- ════════════ PORTAFOLIO PREFABRICADOS (movido aquí, después de Cap.) ════════════ -->
+<!-- PORTAFOLIO PREFABRICADOS — diseño 3 tiers claro -->
+<div class="slide sap" id="p_pp_pf" data-title="Portafolio · Prefabricados">
+  <header class="nav"><div class="nav-w"><div class="lz" onclick="document.getElementById('LOGO').click()"><img class="li" id="LI_pp_pf" alt="GRUPO ITISA"><div class="lt"><span class="l-n">ITISA</span><span class="l-s">GRUPO</span></div></div></div><div class="nav-d"><div class="nav-d-col"><span class="t-n">GRUPO ITISA</span><span class="t-s">Prefabricados · Portafolio</span></div></div></header>
+  <div class="sp-header"><div class="sp-title">Portafolio — Prefabricados</div><div class="sp-sub">Proyectos representativos de concreto prefabricado y preesforzado en México</div></div>
+  <div class="sp-grid">
+    <div class="sp-card"><div class="isl"><label class="ph" id="pp_pf1"><div class="ph-i"><svg viewBox="0 0 24 24"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg></div><button class="ph-b" tabindex="-1">+ Foto</button><input type="file" accept="image/*" onchange="upImg(this,'pp_pf1')"></label></div><div class="sp-ov"><div class="sp-ov-accent"></div><div class="sp-name">Viaducto Bicentenario</div><div class="sp-client">SCT · Edomex</div></div></div>
+    <div class="sp-card"><div class="isl"><label class="ph" id="pp_pf2"><div class="ph-i"><svg viewBox="0 0 24 24"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg></div><button class="ph-b" tabindex="-1">+ Foto</button><input type="file" accept="image/*" onchange="upImg(this,'pp_pf2')"></label></div><div class="sp-ov"><div class="sp-ov-accent"></div><div class="sp-name">Autopista Méx–Tux</div><div class="sp-client">CAPUFE · Oaxaca</div></div></div>
+    <div class="sp-card"><div class="isl"><label class="ph" id="pp_pf3"><div class="ph-i"><svg viewBox="0 0 24 24"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg></div><button class="ph-b" tabindex="-1">+ Foto</button><input type="file" accept="image/*" onchange="upImg(this,'pp_pf3')"></label></div><div class="sp-ov"><div class="sp-ov-accent"></div><div class="sp-name">Planta AIFA</div><div class="sp-client">SEDENA · 2022</div></div></div>
+    <div class="sp-card"><div class="isl"><label class="ph" id="pp_pf4"><div class="ph-i"><svg viewBox="0 0 24 24"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg></div><button class="ph-b" tabindex="-1">+ Foto</button><input type="file" accept="image/*" onchange="upImg(this,'pp_pf4')"></label></div><div class="sp-ov"><div class="sp-ov-accent"></div><div class="sp-name">Libramiento Norte CDMX</div><div class="sp-client">ICA · 2021</div></div></div>
+    <div class="sp-card"><div class="isl"><label class="ph" id="pp_pf5"><div class="ph-i"><svg viewBox="0 0 24 24"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg></div><button class="ph-b" tabindex="-1">+ Foto</button><input type="file" accept="image/*" onchange="upImg(this,'pp_pf5')"></label></div><div class="sp-ov"><div class="sp-ov-accent"></div><div class="sp-name">Terminal Portuaria Lázaro</div><div class="sp-client">Grupo Hermes · 2020</div></div></div>
+    <div class="sp-card"><div class="isl"><label class="ph" id="pp_pf6"><div class="ph-i"><svg viewBox="0 0 24 24"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg></div><button class="ph-b" tabindex="-1">+ Foto</button><input type="file" accept="image/*" onchange="upImg(this,'pp_pf6')"></label></div><div class="sp-ov"><div class="sp-ov-accent"></div><div class="sp-name">Puente Solidaridad</div><div class="sp-client">SCT · Chiapas</div></div></div>
+  </div>
+</div>
+
+<!-- ════════════ PREFABRICADOS — CIFRAS RELEVANTES (plantilla TUMEX p_tx_p1) ════════════ -->
+<div class="slide s2" id="p_pf_cif" data-title="Cifras Relevantes · Prefabricados">
+  <div class="s2-bp">
+    <svg width="100%" height="100%" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" style="position:absolute;inset:0">
+      <rect width="100%" height="100%" fill="#050c1c"/>
+      <rect width="100%" height="100%" fill="url(#glg2)"/>
+      <line x1="0" y1="78"  x2="1440" y2="78"  stroke="rgba(28,80,175,.06)" stroke-width=".8"/>
+      <line x1="0" y1="830" x2="1440" y2="830" stroke="rgba(28,80,175,.06)" stroke-width=".8"/>
+    </svg>
+  </div>
+  <header class="nav">
+    <div class="nav-w"><div class="lz" onclick="document.getElementById('LOGO').click()"><img class="li" id="LI_pf_cif" alt="ITISA GRUPO"><div class="lt"><span class="l-n">ITISA</span><span class="l-s">GRUPO</span></div></div></div>
+    <div class="nav-d"><div class="nav-d-col"><span class="t-n">ITISA Prefabricados</span><span class="t-s">Cifras Relevantes</span></div></div>
+  </header>
+  <div class="s2-top">
+    <div class="s2-tl">
+      <p class="s-eye s2-eye">Cifras Relevantes</p>
+      <h2 class="s2-title">Líder nacional en<br>concreto prefabricado</h2>
+      <div class="s2-rule"></div>
+      <p class="s2-sub">Cinco plantas operativas y producción industrial de gran escala desde 1948.</p>
+    </div>
+    <div class="s2-tr">
+      <div class="s2-ghost"><span class="ctr" data-to="100" data-sfx="K">0</span></div>
+      <div class="s2-ghost-lbl">m³ producidos por año</div>
+    </div>
+  </div>
+  <div class="s2-grid">
+    <div class="cin"><span class="cin-line"></span><span class="cin-n"><span class="ctr" data-to="100" data-sfx="K">0</span><span class="cin-u"> m³</span></span><span class="cin-l">Producción Anual</span><span class="cin-s">Capacidad instalada</span></div>
+    <div class="cin"><span class="cin-line"></span><span class="cin-n"><span class="ctr" data-to="33.5" data-dec="1">0</span><span class="cin-u"> ha</span></span><span class="cin-l">Planta Principal</span><span class="cin-s">Superficie total</span></div>
+    <div class="cin"><span class="cin-line"></span><span class="cin-n"><span class="ctr" data-to="5">0</span></span><span class="cin-l">Plantas</span><span class="cin-s">Operativas en México</span></div>
+    <div class="cin"><span class="cin-line"></span><span class="cin-n"><span class="ctr" data-to="200" data-sfx="+">0</span></span><span class="cin-l">SKUs Estándar</span><span class="cin-s">Catálogo + bajo pedido</span></div>
+    <div class="cin"><span class="cin-line"></span><span class="cin-n"><span class="ctr" data-to="40">0</span><span class="cin-u"> m</span></span><span class="cin-l">Pilotes</span><span class="cin-s">Longitud máxima</span></div>
+    <div class="cin"><span class="cin-line"></span><span class="cin-n">ISO 9001</span><span class="cin-l">Certificación</span><span class="cin-s">14001 · 45001</span></div>
+  </div>
+</div>
+
+<!-- ════════════ SLIDE 11 — DURMIENTES COVER ════════════ -->
+<!-- ════════════ DURMIENTES — PORTADA EDITORIAL (plantilla TUMEX p_tx_cov · s0/c0-*) ════════════ -->
+<div class="slide s0" id="p11" data-title="ITISA Durmientes">
+  <div class="c0-bp">
+    <svg width="100%" height="100%" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" style="position:absolute;inset:0">
+      <defs>
+        <pattern id="c-gsm-du" width="20" height="20" patternUnits="userSpaceOnUse"><path d="M20 0L0 0 0 20" fill="none" stroke="rgba(28,80,175,.052)" stroke-width=".5"/></pattern>
+        <pattern id="c-glg-du" width="80" height="80" patternUnits="userSpaceOnUse"><rect width="80" height="80" fill="url(#c-gsm-du)"/><path d="M80 0L0 0 0 80" fill="none" stroke="rgba(28,80,175,.095)" stroke-width="1"/></pattern>
+      </defs>
+      <rect width="100%" height="100%" fill="#050c1c"/>
+      <rect width="100%" height="100%" fill="url(#c-glg-du)"/>
+      <circle cx="165" cy="730" r="130" fill="none" stroke="rgba(28,80,175,.13)" stroke-width="1.5"/>
+      <circle cx="165" cy="730" r="92"  fill="none" stroke="rgba(28,80,175,.08)" stroke-width="1"/>
+      <rect x="50" y="110" width="320" height="190" fill="none" stroke="rgba(28,80,175,.075)" stroke-width="1"/>
+      <line x1="0" y1="76" x2="1440" y2="76" stroke="rgba(28,80,175,.055)" stroke-width=".8"/>
+      <line x1="0" y1="824" x2="1440" y2="824" stroke="rgba(28,80,175,.055)" stroke-width=".8"/>
+    </svg>
+  </div>
+  <div class="c0-logo-sec">
+    <div class="c0-logo-itisa" onclick="document.getElementById('LOGO').click()" title="Clic para cargar logo ITISA">
+      <img class="li" id="LI_dur_cov" alt="ITISA GRUPO">
+      <div class="lt" id="LT_dur_cov"><span class="l-n">ITISA</span><span class="l-s">GRUPO</span></div>
+    </div>
+    <div class="c0-logo-tumex" onclick="document.getElementById('LOGO_UNIT_dur').click()" title="Clic para cargar logo Durmientes">
+      <img class="c0-logo-img" id="c0LogoImg_dur" alt="ITISA Durmientes">
+      <div class="c0-logo-ph" id="c0LogoPh_dur"><span class="c0-tumex-name">DURMIENTES</span></div>
+      <input type="file" id="LOGO_UNIT_dur" accept="image/*" style="display:none" onchange="upLogoUnit(this,'c0LogoImg_dur','c0LogoPh_dur')">
+    </div>
+  </div>
+  <div class="c0-split">
+    <div class="c0-text">
+      <div class="c0-main">
+        <div class="c0-accent"></div>
+        <h1 class="c0-title">DURMIENTES</h1>
+        <p class="c0-desc"><strong>Fabricante #1</strong> de durmientes de concreto preesforzado en Latinoamérica para carga pesada, pasajeros, metro y tren ligero.</p>
+        <div class="c0-spec-block">
+          <p class="c0-cta-label">Especialidades</p>
+          <div class="c0-pills">
+            <div class="c0-pill" data-num="01"><div class="c0-pill-ttl">Carga Pesada</div><div class="c0-pill-sub">Cooper E-80 · AREMA</div></div>
+            <div class="c0-pill" data-num="02"><div class="c0-pill-ttl">Metro y Ligero</div><div class="c0-pill-sub">Embebido · Booted</div></div>
+          </div>
+        </div>
+      </div>
+      <div class="c0-footer">
+        <span class="c0-fi"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>itisa.com.mx</span>
+        <span class="c0-fi"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>México · LATAM</span>
+      </div>
+    </div>
+    <div class="isl c0-ph">
+      <label class="ph" id="cov-bg-dur">
+        <div class="ph-i"><svg viewBox="0 0 24 24"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg></div>
+        <span class="ph-t">Foto de portada</span>
+        <span class="ph-h">Planta · durmientes · instalación ferroviaria</span>
+        <button class="ph-b" tabindex="-1">+ Cargar foto</button>
+        <input type="file" accept="image/*" onchange="upBg(this,'cov-bg-dur','')">
+      </label>
+    </div>
+  </div>
+</div>
+
+<!-- ════ DURMIENTES · PRODUCTOS Y SERVICIOS (plantilla TUMEX p_tx_p2 · s3-hero) ════ -->
+<div class="slide" id="p_dur_esp" data-title="Productos y Servicios · Durmientes">
+  <div class="isl bg-sl">
+    <label class="ph" id="bg_dur_ps">
+      <div class="ph-i"><svg viewBox="0 0 24 24"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg></div>
+      <span class="ph-t">Foto aérea de instalación</span>
+      <span class="ph-h">Vista de planta o proyecto ferroviario</span>
+      <button class="ph-b" tabindex="-1">+ Cargar foto</button>
+      <input type="file" accept="image/*" onchange="upBg(this,'bg_dur_ps','ov_dur_ps')">
+    </label>
+  </div>
+  <div class="s3-ov" id="ov_dur_ps"></div>
+  <header class="nav">
+    <div class="nav-w"><div class="lz" onclick="document.getElementById('LOGO').click()"><img class="li" id="LI_dur_ps" alt="ITISA GRUPO"><div class="lt" id="LT_dur_ps"><span class="l-n">ITISA</span><span class="l-s">GRUPO</span></div></div></div>
+    <div class="nav-d"><div class="nav-d-col"><span class="t-n">ITISA Durmientes</span><span class="t-s">Productos y Servicios</span></div></div>
+  </header>
+  <div class="s3-hero">
+    <h1 class="s3-title">Para toda aplicación<br>ferroviaria</h1>
+  </div>
+  <div class="s3-strip">
+    <div class="s3-row">
+      <div class="s3-st"><span class="s3-ln"></span><span class="s3-nt"><strong>4</strong> LÍNEAS</span></div>
+      <div class="s3-dv"></div>
+      <div class="s3-st"><span class="s3-ln"></span><span class="s3-nt"><strong>15+</strong> MODELOS</span></div>
+      <div class="s3-dv"></div>
+      <div class="s3-st"><span class="s3-ln"></span><span class="s3-nt"><strong>#1</strong> LATAM</span></div>
+    </div>
+    <p class="s3-desc">Carga pesada, pasajeros, metro y tren ligero, y sistemas especiales: catálogo completo y soluciones por proyecto. Normas AREMA · UIC · NOM.</p>
+  </div>
+</div>
+
+<!-- ════ DURMIENTES · CATÁLOGO DE PRODUCTOS (plantilla sap 3-tiers) ════ -->
+<div class="slide sap" id="p_dur_prod" data-title="Catálogo · Durmientes">
+  <header class="nav nav-lt">
+    <div class="nav-w"><div class="lz" onclick="document.getElementById('LOGO').click()"><img class="li" id="LI_durp" alt="GRUPO ITISA"><div class="lt"><span class="l-n">ITISA</span><span class="l-s">GRUPO</span></div></div></div>
+    <div class="nav-d"><div class="nav-d-col"><span class="t-n">ITISA Durmientes</span><span class="t-s">Catálogo de Productos</span></div></div>
+  </header>
+  <div style="position:absolute;top:var(--nav-h);left:0;right:0;bottom:0;display:flex;flex-direction:column;padding:24px 56px 20px;overflow:hidden;">
+    <div class="ap-page-hdr"><div>
+      <div class="ap-page-title">Catálogo de Productos</div>
+      <div class="ap-page-sub">Durmientes de concreto preesforzado · Sistemas de fijación · Certificación AREMA, UIC y NOM</div>
+    </div></div>
+    <div class="ap-tier ap-tier-1">
+      <div class="ap-tier-hdr"><div class="ap-tier-bar"></div><span class="ap-tier-label">Ferroviario Pesado</span><span class="ap-tier-count">2 productos</span></div>
+      <div class="ap-track" id="apt_durp_1">
+        <div class="ap-card ap-tier-1"><div class="isl"><label class="ph" id="ph_durp_1_1"><div class="ph-i"><svg viewBox="0 0 24 24"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg></div><button class="ph-b" tabindex="-1">+ Foto</button><input type="file" accept="image/*" onchange="upImg(this,'ph_durp_1_1')"></label></div><div class="ap-ov"><div class="ap-name">Monobloque AREMA</div><div class="ap-client">Tipo 1-2 · Cooper E-80</div></div></div>
+        <div class="ap-card ap-tier-1"><div class="isl"><label class="ph" id="ph_durp_1_2"><div class="ph-i"><svg viewBox="0 0 24 24"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg></div><button class="ph-b" tabindex="-1">+ Foto</button><input type="file" accept="image/*" onchange="upImg(this,'ph_durp_1_2')"></label></div><div class="ap-ov"><div class="ap-name">Monobloque UIC 60</div><div class="ap-client">Alta velocidad · 350 km/h</div></div></div>
+      </div>
+    </div>
+    <div class="ap-tier ap-tier-2">
+      <div class="ap-tier-hdr"><div class="ap-tier-bar"></div><span class="ap-tier-label">Metro y Tren Ligero</span><span class="ap-tier-count">3 productos</span></div>
+      <div class="ap-track" id="apt_durp_2">
+        <div class="ap-card ap-tier-2"><div class="isl"><label class="ph" id="ph_durp_2_1"><div class="ph-i"><svg viewBox="0 0 24 24"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg></div><button class="ph-b" tabindex="-1">+ Foto</button><input type="file" accept="image/*" onchange="upImg(this,'ph_durp_2_1')"></label></div><div class="ap-ov"><div class="ap-name">Biacodo Tipo F</div><div class="ap-client">Trocha 1,435 mm</div></div></div>
+        <div class="ap-card ap-tier-2"><div class="isl"><label class="ph" id="ph_durp_2_2"><div class="ph-i"><svg viewBox="0 0 24 24"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg></div><button class="ph-b" tabindex="-1">+ Foto</button><input type="file" accept="image/*" onchange="upImg(this,'ph_durp_2_2')"></label></div><div class="ap-ov"><div class="ap-name">Embebido</div><div class="ap-client">Anti-vibratorio · Metro</div></div></div>
+        <div class="ap-card ap-tier-2"><div class="isl"><label class="ph" id="ph_durp_2_3"><div class="ph-i"><svg viewBox="0 0 24 24"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg></div><button class="ph-b" tabindex="-1">+ Foto</button><input type="file" accept="image/*" onchange="upImg(this,'ph_durp_2_3')"></label></div><div class="ap-ov"><div class="ap-name">Booted</div><div class="ap-client">Tren ligero · Bibloque</div></div></div>
+      </div>
+    </div>
+    <div class="ap-tier ap-tier-3">
+      <div class="ap-tier-hdr"><div class="ap-tier-bar"></div><span class="ap-tier-label">Anclajes y Fijación</span><span class="ap-tier-count">3 productos</span></div>
+      <div class="ap-track" id="apt_durp_3">
+        <div class="ap-card ap-tier-3"><div class="isl"><label class="ph" id="ph_durp_3_1"><div class="ph-i"><svg viewBox="0 0 24 24"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg></div><button class="ph-b" tabindex="-1">+ Foto</button><input type="file" accept="image/*" onchange="upImg(this,'ph_durp_3_1')"></label></div><div class="ap-ov"><div class="ap-name">Pandrol</div><div class="ap-client">Sistema de fijación</div></div></div>
+        <div class="ap-card ap-tier-3"><div class="isl"><label class="ph" id="ph_durp_3_2"><div class="ph-i"><svg viewBox="0 0 24 24"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg></div><button class="ph-b" tabindex="-1">+ Foto</button><input type="file" accept="image/*" onchange="upImg(this,'ph_durp_3_2')"></label></div><div class="ap-ov"><div class="ap-name">Thermit</div><div class="ap-client">Soldadura · Unión rieles</div></div></div>
+        <div class="ap-card ap-tier-3"><div class="isl"><label class="ph" id="ph_durp_3_3"><div class="ph-i"><svg viewBox="0 0 24 24"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg></div><button class="ph-b" tabindex="-1">+ Foto</button><input type="file" accept="image/*" onchange="upImg(this,'ph_durp_3_3')"></label></div><div class="ap-ov"><div class="ap-name">Vossloh</div><div class="ap-client">Sistema elástico</div></div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ════════════ DURMIENTES — CAPACIDADES (plantilla TUMEX p_tx_p0 · s1) ════════════ -->
+<div class="slide s1" id="p12" data-title="Capacidades · Durmientes">
+  <div class="isl bg-sl">
+    <label class="ph" id="bg_dur_cap">
+      <div class="ph-i"><svg viewBox="0 0 24 24"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg></div>
+      <span class="ph-t">Imagen de fondo · Capacidades</span>
+      <span class="ph-h">Planta industrial Durmientes (foto a sangre)</span>
+      <button class="ph-b" tabindex="-1">+ Cargar foto</button>
+      <input type="file" accept="image/*" onchange="upBg(this,'bg_dur_cap','ov_dur_cap')">
+    </label>
+  </div>
+  <div class="s1-ov" id="ov_dur_cap"></div>
+  <header class="nav">
+    <div class="nav-w">
+      <div class="lz" onclick="document.getElementById('LOGO').click()">
+        <img class="li" id="LI_dur_cap" alt="ITISA GRUPO">
+        <div class="lt" id="LT_dur_cap"><span class="l-n">ITISA</span><span class="l-s">GRUPO</span></div>
+      </div>
+    </div>
+    <div class="nav-d"><span class="t-n">ITISA Durmientes</span></div>
+  </header>
+  <div class="s1-hero">
+    <div class="s1-top">
+      <p class="s1-tag">Capacidad Instalada</p>
+      <h1 class="s1-title">El mayor fabricante<br>de durmientes en LATAM</h1>
+      <div class="s1-rule"></div>
+      <p class="s1-eye">EMA + ISO acreditados · Normas AREMA · UIC · NOM</p>
+    </div>
+  </div>
+  <div class="s1-strip">
+    <div class="cin">
+      <span class="cin-line"></span>
+      <span class="cin-n"><span class="ctr" data-to="27" data-sfx="M+">0</span></span>
+      <span class="cin-l">Durmientes Instalados</span>
+      <span class="cin-s">México y LATAM</span>
+    </div>
+    <div class="cin">
+      <span class="cin-line"></span>
+      <span class="cin-n"><span class="ctr" data-to="1.2" data-dec="1" data-sfx="M">0</span><span class="cin-u">/año</span></span>
+      <span class="cin-l">Producción Anual</span>
+      <span class="cin-s">Capacidad instalada</span>
+    </div>
+    <div class="cin">
+      <span class="cin-line"></span>
+      <span class="cin-n">#1</span>
+      <span class="cin-l">LATAM</span>
+      <span class="cin-s">Mayor fabricante</span>
+    </div>
+  </div>
+</div>
+
+<!-- PORTAFOLIO DURMIENTES — diseño 3 tiers claro -->
+<div class="slide sap" id="p_pp_dur" data-title="Portafolio · Durmientes">
+  <header class="nav"><div class="nav-w"><div class="lz" onclick="document.getElementById('LOGO').click()"><img class="li" id="LI_pp_dur" alt="GRUPO ITISA"><div class="lt"><span class="l-n">ITISA</span><span class="l-s">GRUPO</span></div></div></div><div class="nav-d"><div class="nav-d-col"><span class="t-n">GRUPO ITISA</span><span class="t-s">Durmientes · Portafolio</span></div></div></header>
+  <div class="sp-header"><div class="sp-title">Portafolio — Durmientes</div><div class="sp-sub">Proyectos representativos de fabricación e instalación de durmientes ferroviarios</div></div>
+  <div class="sp-grid">
+    <div class="sp-card"><div class="isl"><label class="ph" id="pp_dur1"><div class="ph-i"><svg viewBox="0 0 24 24"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg></div><button class="ph-b" tabindex="-1">+ Foto</button><input type="file" accept="image/*" onchange="upImg(this,'pp_dur1')"></label></div><div class="sp-ov"><div class="sp-ov-accent"></div><div class="sp-name">Tren Maya — Durmientes</div><div class="sp-client">FONATUR · 2023</div></div></div>
+    <div class="sp-card"><div class="isl"><label class="ph" id="pp_dur2"><div class="ph-i"><svg viewBox="0 0 24 24"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg></div><button class="ph-b" tabindex="-1">+ Foto</button><input type="file" accept="image/*" onchange="upImg(this,'pp_dur2')"></label></div><div class="sp-ov"><div class="sp-ov-accent"></div><div class="sp-name">CPKC Red Norte</div><div class="sp-client">CPKC · 2022</div></div></div>
+    <div class="sp-card"><div class="isl"><label class="ph" id="pp_dur3"><div class="ph-i"><svg viewBox="0 0 24 24"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg></div><button class="ph-b" tabindex="-1">+ Foto</button><input type="file" accept="image/*" onchange="upImg(this,'pp_dur3')"></label></div><div class="sp-ov"><div class="sp-ov-accent"></div><div class="sp-name">Ferromex Corredor</div><div class="sp-client">Ferromex · 2021</div></div></div>
+    <div class="sp-card"><div class="isl"><label class="ph" id="pp_dur4"><div class="ph-i"><svg viewBox="0 0 24 24"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg></div><button class="ph-b" tabindex="-1">+ Foto</button><input type="file" accept="image/*" onchange="upImg(this,'pp_dur4')"></label></div><div class="sp-ov"><div class="sp-ov-accent"></div><div class="sp-name">Ferrosur Red Sur</div><div class="sp-client">Ferrosur · 2020</div></div></div>
+    <div class="sp-card"><div class="isl"><label class="ph" id="pp_dur5"><div class="ph-i"><svg viewBox="0 0 24 24"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg></div><button class="ph-b" tabindex="-1">+ Foto</button><input type="file" accept="image/*" onchange="upImg(this,'pp_dur5')"></label></div><div class="sp-ov"><div class="sp-ov-accent"></div><div class="sp-name">SCT Mantenimiento</div><div class="sp-client">SCT · Varios estados</div></div></div>
+    <div class="sp-card"><div class="isl"><label class="ph" id="pp_dur6"><div class="ph-i"><svg viewBox="0 0 24 24"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg></div><button class="ph-b" tabindex="-1">+ Foto</button><input type="file" accept="image/*" onchange="upImg(this,'pp_dur6')"></label></div><div class="sp-ov"><div class="sp-ov-accent"></div><div class="sp-name">Exportación LATAM</div><div class="sp-client">Colombia · Chile · 2019</div></div></div>
+  </div>
+</div>
+
+<!-- ════════════ DURMIENTES — CIFRAS RELEVANTES (plantilla TUMEX p_tx_p1) ════════════ -->
+<div class="slide s2" id="p_dur_cif" data-title="Cifras Relevantes · Durmientes">
+  <div class="s2-bp">
+    <svg width="100%" height="100%" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" style="position:absolute;inset:0">
+      <rect width="100%" height="100%" fill="#050c1c"/>
+      <rect width="100%" height="100%" fill="url(#glg2)"/>
+      <line x1="0" y1="78"  x2="1440" y2="78"  stroke="rgba(28,80,175,.06)" stroke-width=".8"/>
+      <line x1="0" y1="830" x2="1440" y2="830" stroke="rgba(28,80,175,.06)" stroke-width=".8"/>
+    </svg>
+  </div>
+  <header class="nav">
+    <div class="nav-w"><div class="lz" onclick="document.getElementById('LOGO').click()"><img class="li" id="LI_dur_cif" alt="ITISA GRUPO"><div class="lt"><span class="l-n">ITISA</span><span class="l-s">GRUPO</span></div></div></div>
+    <div class="nav-d"><div class="nav-d-col"><span class="t-n">ITISA Durmientes</span><span class="t-s">Cifras Relevantes</span></div></div>
+  </header>
+  <div class="s2-top">
+    <div class="s2-tl">
+      <p class="s-eye s2-eye">Cifras Relevantes</p>
+      <h2 class="s2-title">El mayor fabricante<br>de durmientes en LATAM</h2>
+      <div class="s2-rule"></div>
+      <p class="s2-sub">Presencia en los proyectos ferroviarios de mayor escala en México y Latinoamérica.</p>
+    </div>
+    <div class="s2-tr">
+      <div class="s2-ghost"><span class="ctr" data-to="27" data-sfx="M+">0</span></div>
+      <div class="s2-ghost-lbl">durmientes instalados</div>
+    </div>
+  </div>
+  <div class="s2-grid">
+    <div class="cin"><span class="cin-line"></span><span class="cin-n"><span class="ctr" data-to="27" data-sfx="M+">0</span></span><span class="cin-l">Durmientes Instalados</span><span class="cin-s">México y LATAM</span></div>
+    <div class="cin"><span class="cin-line"></span><span class="cin-n"><span class="ctr" data-to="1.2" data-dec="1" data-sfx="M">0</span><span class="cin-u">/año</span></span><span class="cin-l">Producción Anual</span><span class="cin-s">Capacidad instalada</span></div>
+    <div class="cin"><span class="cin-line"></span><span class="cin-n"><span class="ctr" data-to="15" data-sfx="+">0</span></span><span class="cin-l">Modelos</span><span class="cin-s">AREMA · UIC · NOM</span></div>
+    <div class="cin"><span class="cin-line"></span><span class="cin-n">#1</span><span class="cin-l">LATAM</span><span class="cin-s">Mayor fabricante</span></div>
+    <div class="cin"><span class="cin-line"></span><span class="cin-n" style="font-size:.72em">Cooper E-80</span><span class="cin-l">Carga Máxima</span><span class="cin-s">Norma AREMA</span></div>
+    <div class="cin"><span class="cin-line"></span><span class="cin-n"><span class="ctr" data-to="50" data-sfx="+">0</span><span class="cin-u"> años</span></span><span class="cin-l">Trayectoria</span><span class="cin-s">Operación ininterrumpida</span></div>
+  </div>
+</div>
+
+<!-- ════════════ SLIDE 13 — VÍAS FÉRREAS COVER ════════════ -->
+<!-- ════════════ VÍAS FÉRREAS — PORTADA EDITORIAL (plantilla TUMEX p_tx_cov · s0/c0-*) ════════════ -->
+<div class="slide s0" id="p13" data-title="ITISA Vías Férreas">
+  <div class="c0-bp">
+    <svg width="100%" height="100%" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" style="position:absolute;inset:0">
+      <defs>
+        <pattern id="c-gsm-vf" width="20" height="20" patternUnits="userSpaceOnUse"><path d="M20 0L0 0 0 20" fill="none" stroke="rgba(28,80,175,.052)" stroke-width=".5"/></pattern>
+        <pattern id="c-glg-vf" width="80" height="80" patternUnits="userSpaceOnUse"><rect width="80" height="80" fill="url(#c-gsm-vf)"/><path d="M80 0L0 0 0 80" fill="none" stroke="rgba(28,80,175,.095)" stroke-width="1"/></pattern>
+      </defs>
+      <rect width="100%" height="100%" fill="#050c1c"/>
+      <rect width="100%" height="100%" fill="url(#c-glg-vf)"/>
+      <circle cx="165" cy="730" r="130" fill="none" stroke="rgba(28,80,175,.13)" stroke-width="1.5"/>
+      <line x1="50" y1="450" x2="380" y2="450" stroke="rgba(28,80,175,.10)" stroke-width="1"/>
+      <line x1="50" y1="475" x2="380" y2="475" stroke="rgba(28,80,175,.10)" stroke-width="1"/>
+      <line x1="65" y1="455" x2="65" y2="470" stroke="rgba(28,80,175,.08)" stroke-width="1"/>
+      <line x1="95" y1="455" x2="95" y2="470" stroke="rgba(28,80,175,.08)" stroke-width="1"/>
+      <line x1="125" y1="455" x2="125" y2="470" stroke="rgba(28,80,175,.08)" stroke-width="1"/>
+      <line x1="155" y1="455" x2="155" y2="470" stroke="rgba(28,80,175,.08)" stroke-width="1"/>
+      <line x1="0" y1="76" x2="1440" y2="76" stroke="rgba(28,80,175,.055)" stroke-width=".8"/>
+      <line x1="0" y1="824" x2="1440" y2="824" stroke="rgba(28,80,175,.055)" stroke-width=".8"/>
+    </svg>
+  </div>
+  <div class="c0-logo-sec">
+    <div class="c0-logo-itisa" onclick="document.getElementById('LOGO').click()" title="Clic para cargar logo ITISA">
+      <img class="li" id="LI_vf_cov" alt="ITISA GRUPO">
+      <div class="lt" id="LT_vf_cov"><span class="l-n">ITISA</span><span class="l-s">GRUPO</span></div>
+    </div>
+    <div class="c0-logo-tumex" onclick="document.getElementById('LOGO_UNIT_vf').click()" title="Clic para cargar logo Vías Férreas">
+      <img class="c0-logo-img" id="c0LogoImg_vf" alt="ITISA Vías Férreas">
+      <div class="c0-logo-ph" id="c0LogoPh_vf"><span class="c0-tumex-name">VÍAS FÉRREAS</span></div>
+      <input type="file" id="LOGO_UNIT_vf" accept="image/*" style="display:none" onchange="upLogoUnit(this,'c0LogoImg_vf','c0LogoPh_vf')">
+    </div>
+  </div>
+  <div class="c0-split">
+    <div class="c0-text">
+      <div class="c0-main">
+        <div class="c0-accent"></div>
+        <h1 class="c0-title">VÍAS FÉRREAS</h1>
+        <p class="c0-desc">Construcción, instalación y mantenimiento de <strong>infraestructura ferroviaria</strong> en los proyectos de mayor escala en México: Tren Maya, CPKC, Ferromex.</p>
+        <div class="c0-spec-block">
+          <p class="c0-cta-label">Especialidades</p>
+          <div class="c0-pills">
+            <div class="c0-pill" data-num="01"><div class="c0-pill-ttl">Construcción</div><div class="c0-pill-sub">Vía nueva · Balastada · En placa</div></div>
+            <div class="c0-pill" data-num="02"><div class="c0-pill-ttl">Mantenimiento</div><div class="c0-pill-sub">Predictivo · Correctivo · Mecanizado</div></div>
+          </div>
+        </div>
+      </div>
+      <div class="c0-footer">
+        <span class="c0-fi"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>itisa.com.mx</span>
+        <span class="c0-fi"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>México</span>
+      </div>
+    </div>
+    <div class="isl c0-ph">
+      <label class="ph" id="cov-bg-vf">
+        <div class="ph-i"><svg viewBox="0 0 24 24"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg></div>
+        <span class="ph-t">Foto de portada</span>
+        <span class="ph-h">Vías férreas · maquinaria · proyecto</span>
+        <button class="ph-b" tabindex="-1">+ Cargar foto</button>
+        <input type="file" accept="image/*" onchange="upBg(this,'cov-bg-vf','')">
+      </label>
+    </div>
+  </div>
+</div>
+
+<!-- ════ VÍAS FÉRREAS · PRODUCTOS Y SERVICIOS (plantilla TUMEX p_tx_p2 · s3-hero) ════ -->
+<div class="slide" id="p_vf_esp" data-title="Productos y Servicios · Vías Férreas">
+  <div class="isl bg-sl">
+    <label class="ph" id="bg_vf_ps">
+      <div class="ph-i"><svg viewBox="0 0 24 24"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg></div>
+      <span class="ph-t">Foto aérea de instalación</span>
+      <span class="ph-h">Vista de proyecto ferroviario en campo</span>
+      <button class="ph-b" tabindex="-1">+ Cargar foto</button>
+      <input type="file" accept="image/*" onchange="upBg(this,'bg_vf_ps','ov_vf_ps')">
+    </label>
+  </div>
+  <div class="s3-ov" id="ov_vf_ps"></div>
+  <header class="nav">
+    <div class="nav-w"><div class="lz" onclick="document.getElementById('LOGO').click()"><img class="li" id="LI_vf_ps" alt="ITISA GRUPO"><div class="lt" id="LT_vf_ps"><span class="l-n">ITISA</span><span class="l-s">GRUPO</span></div></div></div>
+    <div class="nav-d"><div class="nav-d-col"><span class="t-n">ITISA Vías Férreas</span><span class="t-s">Productos y Servicios</span></div></div>
+  </header>
+  <div class="s3-hero">
+    <h1 class="s3-title">Construcción, rehabilitación<br>y mantenimiento</h1>
+  </div>
+  <div class="s3-strip">
+    <div class="s3-row">
+      <div class="s3-st"><span class="s3-ln"></span><span class="s3-nt"><strong>4</strong> LÍNEAS</span></div>
+      <div class="s3-dv"></div>
+      <div class="s3-st"><span class="s3-ln"></span><span class="s3-nt"><strong>1,011</strong> KM</span></div>
+      <div class="s3-dv"></div>
+      <div class="s3-st"><span class="s3-ln"></span><span class="s3-nt"><strong>75+</strong> AÑOS</span></div>
+    </div>
+    <p class="s3-desc">Construcción de vía, rehabilitación, obras de arte y mantenimiento mecanizado, con flota propia y personal certificado AREMA. Normas UIC · AREMA · SCT.</p>
+  </div>
+</div>
+
+<!-- ════ VÍAS FÉRREAS · CATÁLOGO DE SERVICIOS (plantilla sap 3-tiers) ════ -->
+<div class="slide sap" id="p_vf_prod" data-title="Catálogo · Vías Férreas">
+  <header class="nav nav-lt">
+    <div class="nav-w"><div class="lz" onclick="document.getElementById('LOGO').click()"><img class="li" id="LI_vfp" alt="GRUPO ITISA"><div class="lt"><span class="l-n">ITISA</span><span class="l-s">GRUPO</span></div></div></div>
+    <div class="nav-d"><div class="nav-d-col"><span class="t-n">ITISA Vías Férreas</span><span class="t-s">Catálogo de Servicios</span></div></div>
+  </header>
+  <div style="position:absolute;top:var(--nav-h);left:0;right:0;bottom:0;display:flex;flex-direction:column;padding:24px 56px 20px;overflow:hidden;">
+    <div class="ap-page-hdr"><div>
+      <div class="ap-page-title">Catálogo de Servicios</div>
+      <div class="ap-page-sub">Instalación · Rehabilitación · Mantenimiento · Obras de arte · Flota propia · Normas UIC · AREMA · SCT</div>
+    </div></div>
+    <div class="ap-tier ap-tier-1">
+      <div class="ap-tier-hdr"><div class="ap-tier-bar"></div><span class="ap-tier-label">Construcción de Vía</span><span class="ap-tier-count">2 servicios</span></div>
+      <div class="ap-track" id="apt_vfp_1">
+        <div class="ap-card ap-tier-1"><div class="isl"><label class="ph" id="ph_vfp_1_1"><div class="ph-i"><svg viewBox="0 0 24 24"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg></div><button class="ph-b" tabindex="-1">+ Foto</button><input type="file" accept="image/*" onchange="upImg(this,'ph_vfp_1_1')"></label></div><div class="ap-ov"><div class="ap-name">Vía Balastada</div><div class="ap-client">Riel · Durmiente · Balasto</div></div></div>
+        <div class="ap-card ap-tier-1"><div class="isl"><label class="ph" id="ph_vfp_1_2"><div class="ph-i"><svg viewBox="0 0 24 24"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg></div><button class="ph-b" tabindex="-1">+ Foto</button><input type="file" accept="image/*" onchange="upImg(this,'ph_vfp_1_2')"></label></div><div class="ap-ov"><div class="ap-name">Vía en Placa</div><div class="ap-client">Sistema rígido · Alta velocidad</div></div></div>
+      </div>
+    </div>
+    <div class="ap-tier ap-tier-2">
+      <div class="ap-tier-hdr"><div class="ap-tier-bar"></div><span class="ap-tier-label">Rehabilitación y Mantenimiento</span><span class="ap-tier-count">3 servicios</span></div>
+      <div class="ap-track" id="apt_vfp_2">
+        <div class="ap-card ap-tier-2"><div class="isl"><label class="ph" id="ph_vfp_2_1"><div class="ph-i"><svg viewBox="0 0 24 24"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg></div><button class="ph-b" tabindex="-1">+ Foto</button><input type="file" accept="image/*" onchange="upImg(this,'ph_vfp_2_1')"></label></div><div class="ap-ov"><div class="ap-name">Soldadura Termit</div><div class="ap-client">Unión de rieles en campo</div></div></div>
+        <div class="ap-card ap-tier-2"><div class="isl"><label class="ph" id="ph_vfp_2_2"><div class="ph-i"><svg viewBox="0 0 24 24"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg></div><button class="ph-b" tabindex="-1">+ Foto</button><input type="file" accept="image/*" onchange="upImg(this,'ph_vfp_2_2')"></label></div><div class="ap-ov"><div class="ap-name">Nivelación y Alineación</div><div class="ap-client">Geometría de vía</div></div></div>
+        <div class="ap-card ap-tier-2"><div class="isl"><label class="ph" id="ph_vfp_2_3"><div class="ph-i"><svg viewBox="0 0 24 24"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg></div><button class="ph-b" tabindex="-1">+ Foto</button><input type="file" accept="image/*" onchange="upImg(this,'ph_vfp_2_3')"></label></div><div class="ap-ov"><div class="ap-name">Renovación Total</div><div class="ap-client">Levantamiento y reposición</div></div></div>
+      </div>
+    </div>
+    <div class="ap-tier ap-tier-3">
+      <div class="ap-tier-hdr"><div class="ap-tier-bar"></div><span class="ap-tier-label">Obras de Arte y Auxiliares</span><span class="ap-tier-count">3 servicios</span></div>
+      <div class="ap-track" id="apt_vfp_3">
+        <div class="ap-card ap-tier-3"><div class="isl"><label class="ph" id="ph_vfp_3_1"><div class="ph-i"><svg viewBox="0 0 24 24"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg></div><button class="ph-b" tabindex="-1">+ Foto</button><input type="file" accept="image/*" onchange="upImg(this,'ph_vfp_3_1')"></label></div><div class="ap-ov"><div class="ap-name">Puentes y Alcantarillas</div><div class="ap-client">Obras de arte</div></div></div>
+        <div class="ap-card ap-tier-3"><div class="isl"><label class="ph" id="ph_vfp_3_2"><div class="ph-i"><svg viewBox="0 0 24 24"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg></div><button class="ph-b" tabindex="-1">+ Foto</button><input type="file" accept="image/*" onchange="upImg(this,'ph_vfp_3_2')"></label></div><div class="ap-ov"><div class="ap-name">Pasos a Nivel</div><div class="ap-client">Diseño e instalación</div></div></div>
+        <div class="ap-card ap-tier-3"><div class="isl"><label class="ph" id="ph_vfp_3_3"><div class="ph-i"><svg viewBox="0 0 24 24"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg></div><button class="ph-b" tabindex="-1">+ Foto</button><input type="file" accept="image/*" onchange="upImg(this,'ph_vfp_3_3')"></label></div><div class="ap-ov"><div class="ap-name">Señalización</div><div class="ap-client">Básica e integrada</div></div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ════════════ VÍAS FÉRREAS — CAPACIDADES (plantilla TUMEX p_tx_p0 · s1) ════════════ -->
+<div class="slide s1" id="p14" data-title="Capacidades · Vías Férreas">
+  <div class="isl bg-sl">
+    <label class="ph" id="bg_vf_cap">
+      <div class="ph-i"><svg viewBox="0 0 24 24"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg></div>
+      <span class="ph-t">Imagen de fondo · Capacidades</span>
+      <span class="ph-h">Infraestructura ferroviaria (foto a sangre)</span>
+      <button class="ph-b" tabindex="-1">+ Cargar foto</button>
+      <input type="file" accept="image/*" onchange="upBg(this,'bg_vf_cap','ov_vf_cap')">
+    </label>
+  </div>
+  <div class="s1-ov" id="ov_vf_cap"></div>
+  <header class="nav">
+    <div class="nav-w">
+      <div class="lz" onclick="document.getElementById('LOGO').click()">
+        <img class="li" id="LI_vf_cap" alt="ITISA GRUPO">
+        <div class="lt" id="LT_vf_cap"><span class="l-n">ITISA</span><span class="l-s">GRUPO</span></div>
+      </div>
+    </div>
+    <div class="nav-d"><span class="t-n">ITISA Vías Férreas</span></div>
+  </header>
+  <div class="s1-hero">
+    <div class="s1-top">
+      <p class="s1-tag">Capacidad Instalada</p>
+      <h1 class="s1-title">Infraestructura ferroviaria<br>a gran escala</h1>
+      <div class="s1-rule"></div>
+      <p class="s1-eye">Tren Maya · CPKC · Ferromex · SCT · Flota propia de maquinaria</p>
+    </div>
+  </div>
+  <div class="s1-strip">
+    <div class="cin">
+      <span class="cin-line"></span>
+      <span class="cin-n"><span class="ctr" data-to="1011" data-sep>0</span><span class="cin-u"> km</span></span>
+      <span class="cin-l">Vías Instaladas</span>
+      <span class="cin-s">Infraestructura total</span>
+    </div>
+    <div class="cin">
+      <span class="cin-line"></span>
+      <span class="cin-n"><span class="ctr" data-to="19">0</span></span>
+      <span class="cin-l">Puentes</span>
+      <span class="cin-s">Construidos</span>
+    </div>
+    <div class="cin">
+      <span class="cin-line"></span>
+      <span class="cin-n"><span class="ctr" data-to="420">0</span></span>
+      <span class="cin-l">Pasos a Nivel</span>
+      <span class="cin-s">Construidos</span>
+    </div>
+  </div>
+</div>
+
+<!-- PORTAFOLIO VÍAS FÉRREAS — diseño 3 tiers claro -->
+<div class="slide sap" id="p_pp_vf" data-title="Portafolio · Vías Férreas">
+  <header class="nav"><div class="nav-w"><div class="lz" onclick="document.getElementById('LOGO').click()"><img class="li" id="LI_pp_vf" alt="GRUPO ITISA"><div class="lt"><span class="l-n">ITISA</span><span class="l-s">GRUPO</span></div></div></div><div class="nav-d"><div class="nav-d-col"><span class="t-n">GRUPO ITISA</span><span class="t-s">Vías Férreas · Portafolio</span></div></div></header>
+  <div class="sp-header"><div class="sp-title">Portafolio — Vías Férreas</div><div class="sp-sub">Construcción e instalación de infraestructura ferroviaria · Tren Maya · CPKC · SCT</div></div>
+  <div class="sp-grid">
+    <div class="sp-card"><div class="isl"><label class="ph" id="pp_vf1"><div class="ph-i"><svg viewBox="0 0 24 24"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg></div><button class="ph-b" tabindex="-1">+ Foto</button><input type="file" accept="image/*" onchange="upImg(this,'pp_vf1')"></label></div><div class="sp-ov"><div class="sp-ov-accent"></div><div class="sp-name">Tren Maya Tramo 4</div><div class="sp-client">FONATUR · 2023</div></div></div>
+    <div class="sp-card"><div class="isl"><label class="ph" id="pp_vf2"><div class="ph-i"><svg viewBox="0 0 24 24"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg></div><button class="ph-b" tabindex="-1">+ Foto</button><input type="file" accept="image/*" onchange="upImg(this,'pp_vf2')"></label></div><div class="sp-ov"><div class="sp-ov-accent"></div><div class="sp-name">CPKC Corredor Norte</div><div class="sp-client">CPKC · 2022</div></div></div>
+    <div class="sp-card"><div class="isl"><label class="ph" id="pp_vf3"><div class="ph-i"><svg viewBox="0 0 24 24"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg></div><button class="ph-b" tabindex="-1">+ Foto</button><input type="file" accept="image/*" onchange="upImg(this,'pp_vf3')"></label></div><div class="sp-ov"><div class="sp-ov-accent"></div><div class="sp-name">Ferromex Occidente</div><div class="sp-client">Ferromex · 2021</div></div></div>
+    <div class="sp-card"><div class="isl"><label class="ph" id="pp_vf4"><div class="ph-i"><svg viewBox="0 0 24 24"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg></div><button class="ph-b" tabindex="-1">+ Foto</button><input type="file" accept="image/*" onchange="upImg(this,'pp_vf4')"></label></div><div class="sp-ov"><div class="sp-ov-accent"></div><div class="sp-name">Tren Maya Tramo 7</div><div class="sp-client">SEDENA · 2024</div></div></div>
+    <div class="sp-card"><div class="isl"><label class="ph" id="pp_vf5"><div class="ph-i"><svg viewBox="0 0 24 24"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg></div><button class="ph-b" tabindex="-1">+ Foto</button><input type="file" accept="image/*" onchange="upImg(this,'pp_vf5')"></label></div><div class="sp-ov"><div class="sp-ov-accent"></div><div class="sp-name">SCT Mantenimiento Nacional</div><div class="sp-client">SCT · 2020</div></div></div>
+    <div class="sp-card"><div class="isl"><label class="ph" id="pp_vf6"><div class="ph-i"><svg viewBox="0 0 24 24"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg></div><button class="ph-b" tabindex="-1">+ Foto</button><input type="file" accept="image/*" onchange="upImg(this,'pp_vf6')"></label></div><div class="sp-ov"><div class="sp-ov-accent"></div><div class="sp-name">19 Puentes Ferroviarios</div><div class="sp-client">Varios clientes · Nacional</div></div></div>
+  </div>
+</div>
+
+<!-- ════════════ VÍAS FÉRREAS — CIFRAS RELEVANTES (plantilla TUMEX p_tx_p1) ════════════ -->
+<div class="slide s2" id="p_vf_cif" data-title="Cifras Relevantes · Vías Férreas">
+  <div class="s2-bp">
+    <svg width="100%" height="100%" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" style="position:absolute;inset:0">
+      <rect width="100%" height="100%" fill="#050c1c"/>
+      <rect width="100%" height="100%" fill="url(#glg2)"/>
+      <line x1="0" y1="78"  x2="1440" y2="78"  stroke="rgba(28,80,175,.06)" stroke-width=".8"/>
+      <line x1="0" y1="830" x2="1440" y2="830" stroke="rgba(28,80,175,.06)" stroke-width=".8"/>
+    </svg>
+  </div>
+  <header class="nav">
+    <div class="nav-w"><div class="lz" onclick="document.getElementById('LOGO').click()"><img class="li" id="LI_vf_cif" alt="ITISA GRUPO"><div class="lt"><span class="l-n">ITISA</span><span class="l-s">GRUPO</span></div></div></div>
+    <div class="nav-d"><div class="nav-d-col"><span class="t-n">ITISA Vías Férreas</span><span class="t-s">Cifras Relevantes</span></div></div>
+  </header>
+  <div class="s2-top">
+    <div class="s2-tl">
+      <p class="s-eye s2-eye">Cifras Relevantes</p>
+      <h2 class="s2-title">Infraestructura ferroviaria<br>a gran escala</h2>
+      <div class="s2-rule"></div>
+      <p class="s2-sub">Construcción y mantenimiento en los proyectos ferroviarios más emblemáticos de México.</p>
+    </div>
+    <div class="s2-tr">
+      <div class="s2-ghost"><span class="ctr" data-to="1011" data-sep>0</span></div>
+      <div class="s2-ghost-lbl">km de vías instaladas</div>
+    </div>
+  </div>
+  <div class="s2-grid">
+    <div class="cin"><span class="cin-line"></span><span class="cin-n"><span class="ctr" data-to="1011" data-sep>0</span><span class="cin-u"> km</span></span><span class="cin-l">Vías Instaladas</span><span class="cin-s">Infraestructura total</span></div>
+    <div class="cin"><span class="cin-line"></span><span class="cin-n"><span class="ctr" data-to="19">0</span></span><span class="cin-l">Puentes</span><span class="cin-s">Construidos</span></div>
+    <div class="cin"><span class="cin-line"></span><span class="cin-n"><span class="ctr" data-to="420">0</span></span><span class="cin-l">Pasos a Nivel</span><span class="cin-s">Construidos</span></div>
+    <div class="cin"><span class="cin-line"></span><span class="cin-n"><span class="ctr" data-to="15" data-sfx="+">0</span></span><span class="cin-l">Multicalzadoras</span><span class="cin-s">Equipos especializados</span></div>
+    <div class="cin"><span class="cin-line"></span><span class="cin-n" style="font-size:.72em">Flota Propia</span><span class="cin-l">Maquinaria</span><span class="cin-s">Operación directa</span></div>
+    <div class="cin"><span class="cin-line"></span><span class="cin-n"><span class="ctr" data-to="75" data-sfx="+">0</span><span class="cin-u" style="font-size:.52em"> años</span></span><span class="cin-l">Experiencia</span><span class="cin-s">Grupo ITISA</span></div>
+  </div>
+</div>
+
+<!-- ════════════ TUMEX — PORTADA EDITORIAL (v2) ════════════ -->
+<div class="slide s0" id="p_tx_cov" data-title="TUMEX">
+  <div class="c0-bp">
+    <svg width="100%" height="100%" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice"
+         xmlns="http://www.w3.org/2000/svg" style="position:absolute;inset:0">
+      <defs>
+        <pattern id="c-gsm2" width="20" height="20" patternUnits="userSpaceOnUse">
+          <path d="M20 0L0 0 0 20" fill="none" stroke="rgba(28,80,175,.052)" stroke-width=".5"/>
+        </pattern>
+        <pattern id="c-glg2" width="80" height="80" patternUnits="userSpaceOnUse">
+          <rect width="80" height="80" fill="url(#c-gsm2)"/>
+          <path d="M80 0L0 0 0 80" fill="none" stroke="rgba(28,80,175,.095)" stroke-width="1"/>
+        </pattern>
+      </defs>
+      <rect width="100%" height="100%" fill="#050c1c"/>
+      <rect width="100%" height="100%" fill="url(#c-glg2)"/>
+      <circle cx="165" cy="730" r="130" fill="none" stroke="rgba(28,80,175,.13)" stroke-width="1.5"/>
+      <circle cx="165" cy="730" r="92"  fill="none" stroke="rgba(28,80,175,.08)" stroke-width="1"/>
+      <circle cx="165" cy="730" r="42"  fill="none" stroke="rgba(28,80,175,.10)" stroke-width="1.2"/>
+      <circle cx="165" cy="730" r="12"  fill="rgba(28,80,175,.08)"/>
+      <line x1="165" y1="560" x2="165" y2="900" stroke="rgba(28,80,175,.055)" stroke-width=".8" stroke-dasharray="5,5"/>
+      <line x1="0"   y1="730" x2="340" y2="730" stroke="rgba(28,80,175,.055)" stroke-width=".8" stroke-dasharray="5,5"/>
+      <rect x="50"  y="110" width="320" height="190" fill="none" stroke="rgba(28,80,175,.075)" stroke-width="1"/>
+      <rect x="72"  y="130" width="276" height="150" fill="none" stroke="rgba(28,80,175,.04)"  stroke-width=".7"/>
+      <line x1="200" y1="130" x2="200" y2="280"     stroke="rgba(28,80,175,.045)" stroke-width=".7"/>
+      <line x1="72"  y1="210" x2="348" y2="210"     stroke="rgba(28,80,175,.045)" stroke-width=".7"/>
+      <line x1="40"  y1="110" x2="40"  y2="300"    stroke="rgba(28,80,175,.065)" stroke-width=".7" stroke-dasharray="3,3"/>
+      <line x1="50"  y1="318" x2="380" y2="318"    stroke="rgba(28,80,175,.065)" stroke-width=".7" stroke-dasharray="3,3"/>
+      <path d="M360 480 Q490 452 620 490 T880 472" fill="none" stroke="rgba(28,80,175,.095)" stroke-width="1.3"/>
+      <path d="M360 507 Q490 480 620 517 T880 500" fill="none" stroke="rgba(28,80,175,.06)"  stroke-width=".8"/>
+      <path d="M360 534 Q490 508 620 544 T880 528" fill="none" stroke="rgba(28,80,175,.04)"  stroke-width=".6"/>
+      <circle cx="1240" cy="240" r="105" fill="none" stroke="rgba(28,80,175,.09)"  stroke-width="1.2"/>
+      <circle cx="1240" cy="240" r="70"  fill="none" stroke="rgba(28,80,175,.055)" stroke-width=".8"/>
+      <circle cx="1240" cy="240" r="28"  fill="none" stroke="rgba(28,80,175,.075)" stroke-width="1"/>
+      <line x1="1240" y1="105" x2="1240" y2="375" stroke="rgba(28,80,175,.055)" stroke-width=".8" stroke-dasharray="5,5"/>
+      <line x1="1100" y1="240" x2="1380" y2="240" stroke="rgba(28,80,175,.055)" stroke-width=".8" stroke-dasharray="5,5"/>
+      <line x1="0" y1="76"  x2="1440" y2="76"  stroke="rgba(28,80,175,.055)" stroke-width=".8"/>
+      <line x1="0" y1="824" x2="1440" y2="824" stroke="rgba(28,80,175,.055)" stroke-width=".8"/>
+    </svg>
+  </div>
+  <div class="c0-logo-sec">
+    <div class="c0-logo-itisa" onclick="document.getElementById('LOGO').click()" title="Clic para cargar logo ITISA">
+      <img class="li" id="LI_tx5" alt="ITISA GRUPO">
+      <div class="lt" id="LT_tx5"><span class="l-n">ITISA</span><span class="l-s">GRUPO</span></div>
+    </div>
+    <div class="c0-logo-tumex" onclick="document.getElementById('LOGO_TX_v2').click()" title="Clic para cargar logo TUMEX">
+      <img class="c0-logo-img" id="c0LogoImg" alt="TUMEX">
+      <div class="c0-logo-ph" id="c0LogoPh"><span class="c0-tumex-name">TUMEX</span></div>
+      <input type="file" id="LOGO_TX_v2" accept="image/*" style="display:none" onchange="upLogoTumex(this)">
+    </div>
+  </div>
+  <div class="c0-split">
+    <div class="c0-text">
+      <div class="c0-main">
+        <div class="c0-accent"></div>
+        <h1 class="c0-title">TUMEX</h1>
+        <p class="c0-desc">Lo último en tecnología en fabricación de tubería de acero con <strong>costura helicoidal y longitudinal</strong> para la conducción de agua, gas, petróleo y uso estructural.</p>
+        <div class="c0-spec-block">
+          <p class="c0-cta-label">Especialidades</p>
+          <div class="c0-pills">
+            <div class="c0-pill" data-num="01">
+              <div class="c0-pill-ttl">Conducción</div>
+              <div class="c0-pill-sub">Agua · Gas · Petróleo</div>
+            </div>
+            <div class="c0-pill" data-num="02">
+              <div class="c0-pill-ttl">Estructural</div>
+              <div class="c0-pill-sub">Uso estructural · Acero</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <button class="c0-client-btn" id="c0ClientBtnTx" onclick="toggleC0ClientTx()" style="display:none">
+        <span class="s1-toggle-icon">+</span>Agregar datos del cliente
+      </button>
+      <div class="c0-client" id="c0ClientTx">
+        <div class="c0-cf">
+          <span class="c0-ck">Preparado para</span>
+          <span class="c0-cv" contenteditable="true" spellcheck="false">Nombre del cliente</span>
+        </div>
+        <div class="c0-cf">
+          <span class="c0-ck">Fecha</span>
+          <span class="c0-cv" contenteditable="true" spellcheck="false">2025</span>
+        </div>
+        <button class="c0-client-close" onclick="toggleC0ClientTx()" title="Quitar">×</button>
+      </div>
+      <div class="c0-footer">
+        <span class="c0-fi">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+          itisa.com.mx
+        </span>
+        <span class="c0-fi">
+          <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          México
+        </span>
+      </div>
+    </div>
+    <div class="isl c0-ph">
+      <label class="ph" id="cov-bg-tx">
+        <div class="ph-i"><svg viewBox="0 0 24 24"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg></div>
+        <span class="ph-t">Foto de portada</span>
+        <span class="ph-h">Tubería · instalación · industria TUMEX</span>
+        <button class="ph-b" tabindex="-1">+ Cargar foto</button>
+        <input type="file" accept="image/*" onchange="upBg(this,'cov-bg-tx','')">
+      </label>
+    </div>
+  </div>
+</div>
+
+<!-- ════════════ TUMEX — PORTADA COMERCIAL (v2) ════════════ -->
+<div class="slide s1" id="p_tx_p0" data-title="Capacidades">
+  <div class="isl bg-sl">
+    <label class="ph" id="bg_tx1">
+      <div class="ph-i"><svg viewBox="0 0 24 24"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg></div>
+      <span class="ph-t">Imagen de fondo · Portada</span>
+      <span class="ph-h">Tubería industrial TUMEX (foto a sangre)</span>
+      <button class="ph-b" tabindex="-1">+ Cargar foto</button>
+      <input type="file" accept="image/*" onchange="upBg(this,'bg_tx1','ov_tx1')">
+    </label>
+  </div>
+  <div class="s1-ov" id="ov_tx1"></div>
+  <header class="nav">
+    <div class="nav-w">
+      <div class="lz" onclick="document.getElementById('LOGO').click()" title="Clic para cargar logo">
+        <img class="li" id="LI_tx1" alt="ITISA GRUPO">
+        <div class="lt" id="LT_tx1"><span class="l-n">ITISA</span><span class="l-s">GRUPO</span></div>
+        <span class="lhint">↑ clic cargar logo</span>
+      </div>
+    </div>
+    <div class="nav-d"><span class="t-n">TUMEX</span></div>
+  </header>
+  <div class="s1-hero">
+    <div class="s1-top">
+      <p class="s1-tag">Capacidad Instalada</p>
+      <h1 class="s1-title">Capacidad industrial<br>de clase mundial</h1>
+      <div class="s1-rule"></div>
+      <p class="s1-eye">Soluciones en tubería de acero desde 1977</p>
+    </div>
+    <div class="s1-footer">
+      <button class="s1-toggle-btn" id="s1ToggleBtn" onclick="toggleS1Client()">
+        <span class="s1-toggle-icon">+</span>
+        Agregar datos del cliente
+      </button>
+      <div class="s1-client" id="s1Client">
+        <div class="s1-cf">
+          <span class="s1-ck">Preparado para</span>
+          <span class="s1-cv" contenteditable="true" spellcheck="false">Nombre del cliente</span>
+        </div>
+        <div class="s1-cf">
+          <span class="s1-ck">Fecha</span>
+          <span class="s1-cv" contenteditable="true" spellcheck="false">2025</span>
+        </div>
+        <button class="s1-client-close" onclick="toggleS1Client()" title="Quitar">×</button>
+      </div>
+    </div>
+  </div>
+  <div class="s1-strip">
+    <div class="cin">
+      <span class="cin-line"></span>
+      <span class="cin-n"><span class="ctr" data-to="68121" data-sep>0</span><span class="cin-u"> m²</span></span>
+      <span class="cin-l">Planta Industrial</span>
+      <span class="cin-s">Instalaciones operativas</span>
+    </div>
+    <div class="cin">
+      <span class="cin-line"></span>
+      <span class="cin-n"><span class="ctr" data-to="970" data-sfx="K+">0</span><span class="cin-u"> t</span></span>
+      <span class="cin-l">Acero Procesado Histórico</span>
+      <span class="cin-s">Histórico acumulado</span>
+    </div>
+    <div class="cin">
+      <span class="cin-line"></span>
+      <span class="cin-n"><span class="ctr" data-to="48" data-sfx="+">0</span><span class="cin-u"> años</span></span>
+      <span class="cin-l">De Operación Ininterrumpida</span>
+      <span class="cin-s">Desde 1977</span>
+    </div>
+  </div>
+</div>
+
+<!-- ════════════ TUMEX — CAPACIDADES (v2) ════════════ -->
+<div class="slide s2" id="p_tx_p1" data-title="Cifras Relevantes">
+  <div class="s2-bp">
+    <svg width="100%" height="100%" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice"
+         xmlns="http://www.w3.org/2000/svg" style="position:absolute;inset:0">
+      <defs>
+        <pattern id="gsm2" width="20" height="20" patternUnits="userSpaceOnUse">
+          <path d="M20 0L0 0 0 20" fill="none" stroke="rgba(28,80,175,.055)" stroke-width=".5"/>
+        </pattern>
+        <pattern id="glg2" width="80" height="80" patternUnits="userSpaceOnUse">
+          <rect width="80" height="80" fill="url(#gsm2)"/>
+          <path d="M80 0L0 0 0 80" fill="none" stroke="rgba(28,80,175,.10)" stroke-width="1"/>
+        </pattern>
+      </defs>
+      <rect width="100%" height="100%" fill="#050c1c"/>
+      <rect width="100%" height="100%" fill="url(#glg2)"/>
+      <rect x="55"  y="160" width="420" height="300" fill="none" stroke="rgba(28,80,175,.14)" stroke-width="1.5"/>
+      <rect x="75"  y="180" width="380" height="260" fill="none" stroke="rgba(28,80,175,.07)" stroke-width=".8"/>
+      <line x1="195" y1="180" x2="195" y2="440" stroke="rgba(28,80,175,.09)" stroke-width=".8"/>
+      <line x1="315" y1="180" x2="315" y2="440" stroke="rgba(28,80,175,.09)" stroke-width=".8"/>
+      <line x1="75"  y1="300" x2="455" y2="300" stroke="rgba(28,80,175,.09)" stroke-width=".8"/>
+      <circle cx="138" cy="242" r="34" fill="none" stroke="rgba(28,80,175,.13)" stroke-width="1.3"/>
+      <circle cx="138" cy="242" r="22" fill="none" stroke="rgba(28,80,175,.08)" stroke-width=".8"/>
+      <circle cx="138" cy="242" r="8"  fill="none" stroke="rgba(28,80,175,.1)"  stroke-width="1"/>
+      <circle cx="258" cy="242" r="34" fill="none" stroke="rgba(28,80,175,.13)" stroke-width="1.3"/>
+      <circle cx="258" cy="242" r="22" fill="none" stroke="rgba(28,80,175,.08)" stroke-width=".8"/>
+      <circle cx="258" cy="242" r="8"  fill="none" stroke="rgba(28,80,175,.1)"  stroke-width="1"/>
+      <circle cx="378" cy="242" r="34" fill="none" stroke="rgba(28,80,175,.12)" stroke-width="1.2"/>
+      <circle cx="378" cy="242" r="22" fill="none" stroke="rgba(28,80,175,.07)" stroke-width=".8"/>
+      <line x1="55" y1="140" x2="475" y2="140" stroke="rgba(28,80,175,.07)" stroke-width=".7" stroke-dasharray="3,3"/>
+      <line x1="35" y1="160" x2="35"  y2="460" stroke="rgba(28,80,175,.07)" stroke-width=".7" stroke-dasharray="3,3"/>
+      <rect x="530" y="110" width="300" height="200" fill="none" stroke="rgba(28,80,175,.1)"  stroke-width="1.2"/>
+      <rect x="550" y="130" width="260" height="160" fill="none" stroke="rgba(28,80,175,.06)" stroke-width=".7"/>
+      <line x1="700" y1="130" x2="700" y2="290" stroke="rgba(28,80,175,.08)" stroke-width=".7"/>
+      <path d="M680 420 Q790 398 900 435 T1120 418" fill="none" stroke="rgba(28,80,175,.1)"  stroke-width="1.2"/>
+      <path d="M680 448 Q790 428 900 462 T1120 448" fill="none" stroke="rgba(28,80,175,.07)" stroke-width=".8"/>
+      <circle cx="1210" cy="280" r="128" fill="none" stroke="rgba(28,80,175,.1)"  stroke-width="1.3"/>
+      <circle cx="1210" cy="280" r="88"  fill="none" stroke="rgba(28,80,175,.07)" stroke-width=".8"/>
+      <circle cx="1210" cy="280" r="44"  fill="none" stroke="rgba(28,80,175,.09)" stroke-width="1"/>
+      <circle cx="1210" cy="280" r="12"  fill="rgba(28,80,175,.07)"/>
+      <line x1="1210" y1="130" x2="1210" y2="430" stroke="rgba(28,80,175,.07)" stroke-width=".8" stroke-dasharray="5,5"/>
+      <line x1="1060" y1="280" x2="1360" y2="280" stroke="rgba(28,80,175,.07)" stroke-width=".8" stroke-dasharray="5,5"/>
+      <line x1="0" y1="78"  x2="1440" y2="78"  stroke="rgba(28,80,175,.06)" stroke-width=".8"/>
+      <line x1="0" y1="830" x2="1440" y2="830" stroke="rgba(28,80,175,.06)" stroke-width=".8"/>
+    </svg>
+  </div>
+  <header class="nav">
+    <div class="nav-w">
+      <div class="lz" onclick="document.getElementById('LOGO').click()">
+        <img class="li" id="LI_tx2" alt="ITISA GRUPO">
+        <div class="lt" id="LT_tx2"><span class="l-n">ITISA</span><span class="l-s">GRUPO</span></div>
+      </div>
+    </div>
+    <div class="nav-d"><div class="nav-d-col"><span class="t-n">TUMEX</span><span class="t-s">Cifras Relevantes</span></div></div>
+  </header>
+  <div class="s2-top">
+    <div class="s2-tl">
+      <p class="s-eye s2-eye">Cifras Relevantes</p>
+      <h2 class="s2-title">Los números que<br>nos respaldan</h2>
+      <div class="s2-rule"></div>
+      <p class="s2-sub">Escala industrial probada a lo largo de dos décadas de operación.</p>
+    </div>
+    <div class="s2-tr">
+      <div class="s2-ghost"><span class="ctr" data-to="48" data-sfx="+">0</span></div>
+      <div class="s2-ghost-lbl">Años de operación desde 1977</div>
+    </div>
+  </div>
+  <div class="s2-grid">
+    <div class="cin"><span class="cin-line"></span><span class="cin-n"><span class="ctr" data-to="68121" data-sep>0</span><span class="cin-u"> m²</span></span><span class="cin-l">Planta Industrial</span><span class="cin-s">Instalaciones operativas</span></div>
+    <div class="cin"><span class="cin-line"></span><span class="cin-n"><span class="ctr" data-to="970" data-sfx="K+">0</span><span class="cin-u"> t</span></span><span class="cin-l">Acero Procesado</span><span class="cin-s">Histórico acumulado</span></div>
+    <div class="cin"><span class="cin-line"></span><span class="cin-n"><span class="ctr" data-to="2.65" data-dec="2" data-sfx="M">0</span><span class="cin-u"> m</span></span><span class="cin-l">Tubería Fabricada</span><span class="cin-s">Producción histórica</span></div>
+    <div class="cin"><span class="cin-line"></span><span class="cin-n">6"–138"</span><span class="cin-l">Diámetros</span><span class="cin-s">Tubería helicoidal SAW</span></div>
+    <div class="cin"><span class="cin-line"></span><span class="cin-n"><span class="ctr" data-to="48" data-sfx="+">0</span><span class="cin-u"> años</span></span><span class="cin-l">Operación</span><span class="cin-s">Ininterrumpida</span></div>
+    <div class="cin"><span class="cin-line"></span><span class="cin-n"><span class="ctr" data-to="70" data-sfx="+">0</span><span class="cin-u" style="font-size:.52em"> proy.</span></span><span class="cin-l">Entregados</span><span class="cin-s">México y LATAM</span></div>
+  </div>
+</div>
+
+<!-- ════════════ TUMEX — PROYECTOS (v2) ════════════ -->
+<div class="slide" id="p_tx_p2" data-title="Productos y Proyectos">
+  <div class="isl bg-sl">
+    <label class="ph" id="bg_tx3">
+      <div class="ph-i"><svg viewBox="0 0 24 24"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg></div>
+      <span class="ph-t">Foto aérea de instalación</span>
+      <span class="ph-h">Vista de proyecto en campo (a sangre)</span>
+      <button class="ph-b" tabindex="-1">+ Cargar foto</button>
+      <input type="file" accept="image/*" onchange="upBg(this,'bg_tx3','ov_tx3')">
+    </label>
+  </div>
+  <div class="s3-ov" id="ov_tx3"></div>
+  <header class="nav">
+    <div class="nav-w">
+      <div class="lz" onclick="document.getElementById('LOGO').click()">
+        <img class="li" id="LI_tx3" alt="ITISA GRUPO">
+        <div class="lt" id="LT_tx3"><span class="l-n">ITISA</span><span class="l-s">GRUPO</span></div>
+      </div>
+    </div>
+    <div class="nav-d"><div class="nav-d-col"><span class="t-n">TUMEX</span><span class="t-s">Productos y Proyectos</span></div></div>
+  </header>
+  <div class="s3-hero">
+    <h1 class="s3-title">Proyectos que<br>hablan por nosotros</h1>
+  </div>
+  <div class="s3-strip">
+    <div class="s3-row">
+      <div class="s3-st"><span class="s3-ln"></span><span class="s3-nt"><strong>70+</strong> PROYECTOS</span></div>
+      <div class="s3-dv"></div>
+      <div class="s3-st"><span class="s3-ln"></span><span class="s3-nt"><strong>20+</strong> ESTADOS</span></div>
+      <div class="s3-dv"></div>
+      <div class="s3-st"><span class="s3-ln"></span><span class="s3-nt"><strong>3</strong> PAÍSES</span></div>
+    </div>
+    <p class="s3-desc">Más de 70 proyectos entregados en México, Centroamérica y Sudamérica: acueductos, trenes, puentes, metros, puertos y grandes centrales.</p>
+  </div>
+</div>
+
+<!-- ════ TUMEX · PRODUCTOS (mismo diseño que Portafolio · 3 tiers) ════ -->
+<div class="slide sap" id="p_tx_prod" data-title="Productos · TUMEX">
+  <header class="nav nav-lt">
+    <div class="nav-w"><div class="lz" onclick="document.getElementById('LOGO').click()"><img class="li" id="LI_txp" alt="GRUPO ITISA"><div class="lt"><span class="l-n">ITISA</span><span class="l-s">GRUPO</span></div></div></div>
+    <div class="nav-d"><div class="nav-d-col"><span class="t-n">TUMEX</span><span class="t-s">Catálogo de Productos</span></div></div>
+  </header>
+  <div style="position:absolute;top:var(--nav-h);left:0;right:0;bottom:0;display:flex;flex-direction:column;padding:24px 56px 20px;overflow:hidden;">
+    <div class="ap-page-hdr">
+      <div>
+        <div class="ap-page-title">Catálogo de Productos</div>
+        <div class="ap-page-sub">Tubería de acero SAW · Revestimientos · Accesorios · Diámetros 6"–138" · Aceros A-36 · API X42–X70</div>
+      </div>
+    </div>
+
+    <!-- Tier 1: Tubería Principal -->
+    <div class="ap-tier ap-tier-1">
+      <div class="ap-tier-hdr">
+        <div class="ap-tier-bar"></div>
+        <span class="ap-tier-label">Tubería Principal</span>
+        <span class="ap-tier-count">2 productos</span>
+      </div>
+      <div class="ap-track" id="apt_txp_1">
+        <div class="ap-card ap-tier-1">
+          <div class="isl"><label class="ph" id="ph_txp_1_1"><div class="ph-i"><svg viewBox="0 0 24 24"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg></div><button class="ph-b" tabindex="-1">+ Foto</button><input type="file" accept="image/*" onchange="upImg(this,'ph_txp_1_1')"></label></div>
+          <div class="ap-ov"><div class="ap-name">Tubería Helicoidal SAW</div><div class="ap-client">6" – 138" · Costura helicoidal</div></div>
+        </div>
+        <div class="ap-card ap-tier-1">
+          <div class="isl"><label class="ph" id="ph_txp_1_2"><div class="ph-i"><svg viewBox="0 0 24 24"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg></div><button class="ph-b" tabindex="-1">+ Foto</button><input type="file" accept="image/*" onchange="upImg(this,'ph_txp_1_2')"></label></div>
+          <div class="ap-ov"><div class="ap-name">Tubería Longitudinal SAW</div><div class="ap-client">Hasta 138" · Costura longitudinal</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tier 2: Revestimientos -->
+    <div class="ap-tier ap-tier-2">
+      <div class="ap-tier-hdr">
+        <div class="ap-tier-bar"></div>
+        <span class="ap-tier-label">Revestimientos</span>
+        <span class="ap-tier-count">3 productos</span>
+      </div>
+      <div class="ap-track" id="apt_txp_2">
+        <div class="ap-card ap-tier-2">
+          <div class="isl"><label class="ph" id="ph_txp_2_1"><div class="ph-i"><svg viewBox="0 0 24 24"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg></div><button class="ph-b" tabindex="-1">+ Foto</button><input type="file" accept="image/*" onchange="upImg(this,'ph_txp_2_1')"></label></div>
+          <div class="ap-ov"><div class="ap-name">Epoxi Fusion Bond</div><div class="ap-client">Curado en horno · Sumergible</div></div>
+        </div>
+        <div class="ap-card ap-tier-2">
+          <div class="isl"><label class="ph" id="ph_txp_2_2"><div class="ph-i"><svg viewBox="0 0 24 24"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg></div><button class="ph-b" tabindex="-1">+ Foto</button><input type="file" accept="image/*" onchange="upImg(this,'ph_txp_2_2')"></label></div>
+          <div class="ap-ov"><div class="ap-name">Epoxi Líquido</div><div class="ap-client">Aplicación industrial</div></div>
+        </div>
+        <div class="ap-card ap-tier-2">
+          <div class="isl"><label class="ph" id="ph_txp_2_3"><div class="ph-i"><svg viewBox="0 0 24 24"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg></div><button class="ph-b" tabindex="-1">+ Foto</button><input type="file" accept="image/*" onchange="upImg(this,'ph_txp_2_3')"></label></div>
+          <div class="ap-ov"><div class="ap-name">Polietileno Tricapa</div><div class="ap-client">Extruido · Alta resistencia</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tier 3: Accesorios y Conexiones -->
+    <div class="ap-tier ap-tier-3">
+      <div class="ap-tier-hdr">
+        <div class="ap-tier-bar"></div>
+        <span class="ap-tier-label">Accesorios y Conexiones</span>
+        <span class="ap-tier-count">3 productos</span>
+      </div>
+      <div class="ap-track" id="apt_txp_3">
+        <div class="ap-card ap-tier-3">
+          <div class="isl"><label class="ph" id="ph_txp_3_1"><div class="ph-i"><svg viewBox="0 0 24 24"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg></div><button class="ph-b" tabindex="-1">+ Foto</button><input type="file" accept="image/*" onchange="upImg(this,'ph_txp_3_1')"></label></div>
+          <div class="ap-ov"><div class="ap-name">Codos</div><div class="ap-client">Soldados · Especiales</div></div>
+        </div>
+        <div class="ap-card ap-tier-3">
+          <div class="isl"><label class="ph" id="ph_txp_3_2"><div class="ph-i"><svg viewBox="0 0 24 24"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg></div><button class="ph-b" tabindex="-1">+ Foto</button><input type="file" accept="image/*" onchange="upImg(this,'ph_txp_3_2')"></label></div>
+          <div class="ap-ov"><div class="ap-name">Tees y Reducciones</div><div class="ap-client">Geometrías personalizadas</div></div>
+        </div>
+        <div class="ap-card ap-tier-3">
+          <div class="isl"><label class="ph" id="ph_txp_3_3"><div class="ph-i"><svg viewBox="0 0 24 24"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg></div><button class="ph-b" tabindex="-1">+ Foto</button><input type="file" accept="image/*" onchange="upImg(this,'ph_txp_3_3')"></label></div>
+          <div class="ap-ov"><div class="ap-name">Bridas y Tapas</div><div class="ap-client">Sello y conexión</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PORTAFOLIO TUMEX — diseño 3 tiers claro -->
+<div class="slide sap" id="p_pp_tx" data-title="Portafolio de Proyectos">
+  <header class="nav"><div class="nav-w"><div class="lz" onclick="document.getElementById('LOGO').click()"><img class="li" id="LI_pp_tx" alt="GRUPO ITISA"><div class="lt"><span class="l-n">ITISA</span><span class="l-s">GRUPO</span></div></div></div><div class="nav-d"><div class="nav-d-col"><span class="t-n">TUMEX</span><span class="t-s">Portafolio de Proyectos</span></div></div></header>
+  <div class="sp-header"><div class="sp-title">Portafolio de Proyectos</div><div class="sp-sub">Tubería de acero para infraestructura hidráulica · Oil &amp; Gas · Industrial</div></div>
+  <div class="sp-grid">
+    <div class="sp-card"><div class="isl"><label class="ph" id="pp_tx1"><div class="ph-i"><svg viewBox="0 0 24 24"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg></div><button class="ph-b" tabindex="-1">+ Foto</button><input type="file" accept="image/*" onchange="upImg(this,'pp_tx1')"></label></div><div class="sp-ov"><div class="sp-ov-accent"></div><div class="sp-name">Agua Saludable La Laguna</div><div class="sp-client">SIIAO · 2023</div></div></div>
+    <div class="sp-card"><div class="isl"><label class="ph" id="pp_tx2"><div class="ph-i"><svg viewBox="0 0 24 24"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg></div><button class="ph-b" tabindex="-1">+ Foto</button><input type="file" accept="image/*" onchange="upImg(this,'pp_tx2')"></label></div><div class="sp-ov"><div class="sp-ov-accent"></div><div class="sp-name">Acueducto TJ–Valle Guadalupe</div><div class="sp-client">CESPT · 2023</div></div></div>
+    <div class="sp-card"><div class="isl"><label class="ph" id="pp_tx3"><div class="ph-i"><svg viewBox="0 0 24 24"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg></div><button class="ph-b" tabindex="-1">+ Foto</button><input type="file" accept="image/*" onchange="upImg(this,'pp_tx3')"></label></div><div class="sp-ov"><div class="sp-ov-accent"></div><div class="sp-name">Acueducto Monterrey VI</div><div class="sp-client">SADM · 2022</div></div></div>
+    <div class="sp-card"><div class="isl"><label class="ph" id="pp_tx4"><div class="ph-i"><svg viewBox="0 0 24 24"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg></div><button class="ph-b" tabindex="-1">+ Foto</button><input type="file" accept="image/*" onchange="upImg(this,'pp_tx4')"></label></div><div class="sp-ov"><div class="sp-ov-accent"></div><div class="sp-name">PEMEX Línea Hidráulica</div><div class="sp-client">PEMEX · 2021</div></div></div>
+    <div class="sp-card"><div class="isl"><label class="ph" id="pp_tx5"><div class="ph-i"><svg viewBox="0 0 24 24"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg></div><button class="ph-b" tabindex="-1">+ Foto</button><input type="file" accept="image/*" onchange="upImg(this,'pp_tx5')"></label></div><div class="sp-ov"><div class="sp-ov-accent"></div><div class="sp-name">Sistema Hidráulico CDMX</div><div class="sp-client">SACMEX · 2020</div></div></div>
+    <div class="sp-card"><div class="isl"><label class="ph" id="pp_tx6"><div class="ph-i"><svg viewBox="0 0 24 24"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg></div><button class="ph-b" tabindex="-1">+ Foto</button><input type="file" accept="image/*" onchange="upImg(this,'pp_tx6')"></label></div><div class="sp-ov"><div class="sp-ov-accent"></div><div class="sp-name">Gasoducto Industrial NL</div><div class="sp-client">SENER · 2019</div></div></div>
+  </div>
+</div>
+
+<!-- p3 Tren Maya eliminado — el proyecto vive en el carrusel de Vías Férreas -->
+
+<!-- p_all_proj eliminado: el diseño de 3 tiers vive en cada unidad de negocio -->
+
+
+<!-- ════════════ PROYECTO DETALLE — slide dinámica compartida ════════════ -->
+<div class="slide s4" id="p_proj_detail" data-title="Proyecto">
+  <header class="nav nav-lt"><div class="nav-w"><div class="lz" onclick="document.getElementById('LOGO').click()"><img class="li" id="LI_pd" alt="GRUPO ITISA"><div class="lt"><span class="l-n">ITISA</span><span class="l-s">GRUPO</span></div></div></div><div class="nav-d"><div class="nav-d-col"><span class="t-n" id="pd-nav-unit">GRUPO ITISA</span><span class="t-s" id="pd-nav-sub">Proyecto</span></div></div></header>
+  <button class="pd-back" onclick="goTo(window._pdOrigin||0)">Portafolio</button>
+  <div class="s4-body">
+    <div class="s4-left">
+      <div class="s4-content-top">
+        <div class="s4-text">
+          <span class="s4-kick" id="pd-unit-kick">UNIDAD</span>
+          <h2 class="s4-h2" id="pd-title">—</h2>
+          <p class="s4-desc" id="pd-desc">—</p>
+        </div>
+        <div class="s4-specs">
+          <div class="s4-spc-lbl">Especificaciones del Proyecto</div>
+          <div class="s4-spc-items" id="pd-specs"></div>
+        </div>
+      </div>
+      <div class="s4-meta">
+        <div class="s4-mi"><span class="mk">Año</span><span class="mv" id="pd-year">—</span></div>
+        <div class="s4-mi"><span class="mk">Ubicación</span><span class="mv" id="pd-loc">—</span></div>
+        <div class="s4-mi"><span class="mk">Cliente</span><span class="mv" id="pd-client">—</span></div>
+      </div>
+    </div>
+    <div class="s4-right"><div class="isl s4-ph"><label class="ph ph-lt" id="ph-pd"><div class="ph-i"><svg viewBox="0 0 24 24"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg></div><span class="ph-t">Foto del proyecto</span><span class="ph-h">Cargar imagen del proyecto</span><button class="ph-b" tabindex="-1">+ Cargar foto</button><input type="file" accept="image/*" onchange="upImg(this,'ph-pd')"></label></div></div>
+  </div>
+</div>
+
+<!-- ════════════ SLIDE — GALERÍA / VIDEO ════════════ -->
+<div class="slide sgal" id="p_galeria" data-title="Galería">
+  <!-- Blueprint fondo -->
+  <div style="position:absolute;inset:0;z-index:0;overflow:hidden;pointer-events:none;">
+    <svg width="100%" height="100%" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" style="position:absolute;inset:0">
+      <rect width="100%" height="100%" fill="#050c1c"/>
+      <rect width="100%" height="100%" fill="url(#c-glg)"/>
+    </svg>
+  </div>
+
+  <header class="nav">
+    <div class="nav-w">
+      <div class="lz" onclick="document.getElementById('LOGO').click()">
+        <img class="li" id="LI_gal" alt="GRUPO ITISA">
+        <div class="lt"><span class="l-n">ITISA</span><span class="l-s">GRUPO</span></div>
+      </div>
+    </div>
+    <div class="nav-d"><div class="nav-d-col"><span class="t-n">GRUPO ITISA</span><span class="t-s">Galería</span></div></div>
+  </header>
+
+  <!-- Cuerpo del slide -->
+  <div class="sgal-body">
+
+    <!-- Encabezado + tabs -->
+    <div class="sgal-hdr">
+      <div>
+        <div class="sgal-eyebrow"><span class="sgal-eye-line"></span>Galería Multimedia</div>
+        <h2 class="sgal-title">Instalaciones &amp; Proyectos</h2>
+      </div>
+      <div class="sgal-tabs" id="galTabs">
+        <button class="sgal-tab on" data-tab="fotos"  onclick="galTab('fotos')">Fotos</button>
+        <button class="sgal-tab"    data-tab="videos" onclick="galTab('videos')">Video</button>
+      </div>
+    </div>
+
+    <!-- Panel FOTOS -->
+    <div class="sgal-panel" id="galPanelFotos">
+      <div class="sgal-grid" id="galGrid">
+        <!-- Tarjetas generadas por JS desde MEDIOS.galeria -->
+      </div>
+      <!-- Botón añadir foto manual (visible solo con herramientas) -->
+      <label class="sgal-add-btn tools-only" id="galAddBtn" title="Agregar foto">
+        <svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+        Agregar foto
+        <input type="file" accept="image/*" multiple style="display:none" onchange="galAddFiles(this)">
+      </label>
+    </div>
+
+    <!-- Panel VIDEO -->
+    <div class="sgal-panel sgal-panel--hidden" id="galPanelVideos">
+      <div class="sgal-video-wrap" id="galVideoWrap">
+        <!-- Video principal -->
+        <div class="sgal-video-main" id="galVideoMain">
+          <div class="sgal-video-ph" id="galVideoPh">
+            <svg viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+            <span>Sin video configurado</span>
+            <span class="sgal-video-hint">Agrega la ruta en <code>MEDIOS.galeria_video</code></span>
+          </div>
+          <!-- Video element inyectado por JS si hay src -->
+        </div>
+        <!-- Lista de videos adicionales -->
+        <div class="sgal-video-list" id="galVideoList"></div>
+      </div>
+    </div>
+
+  </div><!-- /sgal-body -->
+
+  <!-- Lightbox del slide galería (separado del global para no interferir) -->
+  <div class="sgal-lb" id="galLb" onclick="galLbClose()">
+    <button class="sgal-lb-close" onclick="galLbClose()">✕</button>
+    <button class="sgal-lb-prev"  onclick="event.stopPropagation();galLbNav(-1)">&#8592;</button>
+    <button class="sgal-lb-next"  onclick="event.stopPropagation();galLbNav(+1)">&#8594;</button>
+    <img id="galLbImg" src="" alt="">
+    <div class="sgal-lb-cap" id="galLbCap"></div>
+  </div>
+</div>
+
+<!-- ════════════ SLIDE 20 — CONTACTO ════════════ -->
+<div class="slide sct" id="p20" data-title="Contacto">
+  <div class="s2-bp" style="position:absolute;inset:0;z-index:0;overflow:hidden;pointer-events:none;"><svg width="100%" height="100%" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" style="position:absolute;inset:0"><rect width="100%" height="100%" fill="#050c1c"/><rect width="100%" height="100%" fill="url(#c-glg)"/></svg></div>
+  <header class="nav"><div class="nav-w"><div class="lz" onclick="document.getElementById('LOGO').click()"><img class="li" id="LI_ct" alt="GRUPO ITISA"><div class="lt"><span class="l-n">ITISA</span><span class="l-s">GRUPO</span></div></div></div><div class="nav-d"><div class="nav-d-col"><span class="t-n">GRUPO ITISA</span><span class="t-s">Contacto</span></div></div></header>
+  <div class="sct-body" style="position:absolute;z-index:1;top:var(--nav-h);left:0;right:0;bottom:0;display:flex;flex-direction:column;justify-content:space-between;padding:40px 56px 36px;">
+    <div><div class="sct-brand">GRUPO ITISA</div><div class="sct-brand-sub">· Contacto Corporativo</div></div>
+    <div class="sct-mid">
+      <div class="sct-contact">
+        <div class="sct-contact-title">CONTACTO</div>
+        <div class="sct-item"><div class="sct-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div><div class="sct-item-val"><a href="https://www.itisa.com.mx/" target="_blank" rel="noopener" style="color:inherit;text-decoration:none">www.itisa.com.mx</a></div></div>
+        <div class="sct-item"><div class="sct-icon"><svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div><div class="sct-item-val">contacto@grupoitisa.com.mx</div></div>
+        <div class="sct-item"><div class="sct-icon"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13 19.79 19.79 0 0 1 1.61 4.4 2 2 0 0 1 3.6 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.16 6.16l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div><div class="sct-item-val">+52 (55) 1234-5678</div></div>
+        <div class="sct-item"><div class="sct-icon"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div><div class="sct-item-val">Ciudad de México, México</div></div>
+      </div>
+      <div class="sct-map">
+        <div class="sct-map-label">CENTROS DE PRODUCCIÓN</div>
+        <div class="sct-map-sub">Norte · Centro · Sur · Sureste de México</div>
+      </div>
+    </div>
+    <div class="sct-footer">GRUPO ITISA · DESDE 1948 · <a href="https://www.itisa.com.mx/" target="_blank" rel="noopener" style="color:inherit;text-decoration:none">www.itisa.com.mx</a></div>
+  </div>
+</div>
+
+<div class="prg" id="pbar" style="width:5%"></div>
+<!-- Dots generados dinámicamente por JS desde SLIDES_META -->
+<nav class="dots" id="dots-nav"></nav>
+<div class="pgc" id="pgc">1 / 21</div>
+<div class="arrs">
+  <button class="arr" id="pv" disabled>&#8592;</button>
+  <button class="toggle-btn" id="toggleBtn" title="Mostrar / ocultar herramientas" onclick="toggleTools()">⚙</button>
+  <button class="arr" id="nx">&#8594;</button>
+</div>
+<div class="lb" id="lb">
+  <button class="lbx" onclick="clb()">✕</button>
+  <img id="lb-img" src="" alt="">
+</div>
+
+<script src="assets/data/contenido.js"></script>
+<script src="assets/js/presentacion.js"></script>
+</body>
+</html>
