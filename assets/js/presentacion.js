@@ -642,7 +642,7 @@ document.addEventListener('touchend',e=>{const dx=e.changedTouches[0].clientX-tx
 ══════════════════════════════════════════════════════ */
 
 /* ── Proyectos: cargados desde contenido.js (CONTENIDO_PROJECTS) ── */
-const PORT_PROJECTS = (typeof window.CONTENIDO_PROJECTS !== 'undefined')
+var PORT_PROJECTS = (typeof window.CONTENIDO_PROJECTS !== 'undefined')
   ? window.CONTENIDO_PROJECTS
   : { pf:[], dur:[], vf:[], tx:[] };  // fallback vacío
 
