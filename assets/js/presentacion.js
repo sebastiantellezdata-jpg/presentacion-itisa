@@ -642,7 +642,7 @@ document.addEventListener('touchend',e=>{const dx=e.changedTouches[0].clientX-tx
 ══════════════════════════════════════════════════════ */
 
 /* ── Proyectos: cargados desde contenido.js (CONTENIDO_PROJECTS) ── */
-var PORT_PROJECTS = (typeof window.CONTENIDO_PROJECTS !== 'undefined')
+const PORT_PROJECTS = (typeof window.CONTENIDO_PROJECTS !== 'undefined')
   ? window.CONTENIDO_PROJECTS
   : { pf:[], dur:[], vf:[], tx:[] };  // fallback vacío
 
@@ -1481,3 +1481,126 @@ function toggleTools() {
   btn.title = toolsVisible ? 'Ocultar herramientas' : 'Mostrar herramientas';
   btn.classList.toggle('tools-hidden', !toolsVisible);
 }
+
+/* ══════════════════════════════════════════════════════════════════════
+   PANEL EDITOR DE USUARIO
+   Permite cambiar cliente y contacto — se guarda en localStorage.
+══════════════════════════════════════════════════════════════════════ */
+(function initUserEditor() {
+
+  const STORAGE_KEY = 'itisa_user_prefs';
+
+  /* ── Leer preferencias guardadas ── */
+  function loadPrefs() {
+    try { return JSON.parse(localStorage.getItem(STORAGE_KEY)) || {}; }
+    catch(e) { return {}; }
+  }
+
+  /* ── Guardar preferencias ── */
+  function savePrefs(data) {
+    try { localStorage.setItem(STORAGE_KEY, JSON.stringify(data)); }
+    catch(e) { console.warn('localStorage no disponible'); }
+  }
+
+  /* ── Aplicar valores a la presentación ── */
+  function applyPrefs(p) {
+    if (!p) return;
+
+    /* Nombre del cliente — portada principal, portada TUMEX y slide cliente */
+    if (p.cliente) {
+      document.querySelectorAll('.c0-cv[data-field="cliente"], .s1-cv[data-field="cliente"]')
+        .forEach(el => el.textContent = p.cliente);
+      /* contenteditable genérico con texto "Nombre del cliente" */
+      document.querySelectorAll('.c0-cv[contenteditable], .s1-cv[contenteditable]').forEach(el => {
+        if (el.textContent.trim() === 'Nombre del cliente' || el.dataset.field === 'cliente')
+          el.textContent = p.cliente;
+      });
+    }
+
+    /* Fecha */
+    if (p.fecha) {
+      document.querySelectorAll('.c0-cv[contenteditable]').forEach(el => {
+        if (/^\d{4}$/.test(el.textContent.trim()) || el.dataset.field === 'fecha')
+          el.textContent = p.fecha;
+      });
+    }
+
+    /* Email */
+    if (p.email) {
+      const el = document.getElementById('ct-email');
+      if (el) el.textContent = p.email;
+    }
+
+    /* Teléfono */
+    if (p.tel) {
+      const el = document.getElementById('ct-tel');
+      if (el) el.textContent = p.tel;
+    }
+  }
+
+  /* ── Poblar inputs del panel con valores actuales ── */
+  function populateInputs(p) {
+    const set = (id, val) => { const el = document.getElementById(id); if (el && val) el.value = val; };
+    set('ued-cliente', p.cliente || '');
+    set('ued-fecha',   p.fecha   || '');
+    set('ued-email',   p.email   || (window.CONTENIDO_EMPRESA && window.CONTENIDO_EMPRESA.email) || '');
+    set('ued-tel',     p.tel     || (window.CONTENIDO_EMPRESA && window.CONTENIDO_EMPRESA.telefono) || '');
+  }
+
+  /* ── Toggle panel ── */
+  window.uedToggle = function() {
+    const panel    = document.getElementById('uedPanel');
+    const backdrop = document.getElementById('uedBackdrop');
+    const isOpen   = panel.classList.contains('open');
+    panel.classList.toggle('open', !isOpen);
+    backdrop.classList.toggle('open', !isOpen);
+    if (!isOpen) populateInputs(loadPrefs());
+  };
+
+  /* ── Guardar ── */
+  window.uedSave = function() {
+    const get = id => { const el = document.getElementById(id); return el ? el.value.trim() : ''; };
+    const prefs = {
+      cliente: get('ued-cliente'),
+      fecha:   get('ued-fecha'),
+      email:   get('ued-email'),
+      tel:     get('ued-tel'),
+    };
+    savePrefs(prefs);
+    applyPrefs(prefs);
+
+    /* Mostrar confirmación */
+    const saved = document.getElementById('uedSaved');
+    if (saved) {
+      saved.style.display = 'block';
+      saved.style.animation = 'none';
+      setTimeout(() => { saved.style.animation = 'uedFade 2s forwards'; }, 10);
+      setTimeout(() => { saved.style.display = 'none'; }, 2200);
+    }
+  };
+
+  /* ── Restablecer ── */
+  window.uedReset = function() {
+    if (!confirm('¿Restablecer todos los campos a los valores originales?')) return;
+    localStorage.removeItem(STORAGE_KEY);
+    /* Limpiar inputs */
+    ['ued-cliente','ued-fecha','ued-email','ued-tel'].forEach(id => {
+      const el = document.getElementById(id); if (el) el.value = '';
+    });
+    /* Restaurar valores desde contenido.js */
+    const emp = window.CONTENIDO_EMPRESA || {};
+    const emailEl = document.getElementById('ct-email');
+    const telEl   = document.getElementById('ct-tel');
+    if (emailEl && emp.email)    emailEl.textContent = emp.email;
+    if (telEl   && emp.telefono) telEl.textContent   = emp.telefono;
+    /* Restaurar "Nombre del cliente" */
+    document.querySelectorAll('.c0-cv[contenteditable], .s1-cv[contenteditable]').forEach(el => {
+      if (el.closest('.c0-cf') || el.closest('.s1-cf')) el.textContent = 'Nombre del cliente';
+    });
+  };
+
+  /* ── Arranque: aplicar prefs guardadas al cargar ── */
+  const saved = loadPrefs();
+  if (Object.keys(saved).length > 0) applyPrefs(saved);
+
+})();
